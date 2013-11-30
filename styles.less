@@ -5,10 +5,10 @@
 @column-width: 60;
 @gutter-width: 20;
 
-@total-width: 100%;
-
 header {
 	background-color: black;
+	margin-bottom: 1em;
+	min-width: 960px;
 }
 
 header h1{
@@ -19,6 +19,23 @@ header h1{
 }
 
 #center {
-	max-width: 960px;
+	width: 960px;
 	margin: 0 auto;
+}
+
+#center article {
+	.column(8);
+}
+
+#center section {
+	.column(4);
+}
+
+#center h2 {
+	font-family: Georgia;
+	font-size: 1.5em;
+	padding: 10em 0;
+	color: #666;
+	background-color: #ccc;
+	text-align: center;
 }

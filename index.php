@@ -10,7 +10,12 @@
     	<h1>This is Header</h1>
     </header>
 	<div id="center">
-    
+    	<article>
+        	<h2>This is Article</h2>
+        </article>
+        <section>
+        	<h2>This is Section</h2>
+        </section>
     </div>
 </body>
 </html>
