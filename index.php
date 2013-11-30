@@ -7,7 +7,10 @@
 </head>
 <body>
 	<header>
-    	
+    	<h1>This is Header</h1>
     </header>
+	<div id="center">
+    
+    </div>
 </body>
 </html>
