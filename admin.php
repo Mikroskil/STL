@@ -10,11 +10,11 @@
 	<header>
     	<nav>
             <ul>
-              <li><a href="home.php" class="sedang-dibuka">Home</a></li>
+              <li><a href="home.php">Home</a></li>
               <li><a href="biodata.php">Biodata</a></li>
               <li><a href="krs.php">Krs</a></li>
               <li><a href="jadwalp.php">Jadwal</a></li>
-              <li><a href="admin.php">Admin</a></li>
+              <li><a href="admin.php" class="sedang-dibuka">Admin</a></li>
             </ul>
             <ul id="logout-box">
               <li><a href="#" id="username-box">Username</a></li>

@@ -10,9 +10,9 @@
 	<header>
     	<nav>
             <ul>
-              <li><a href="home.php" class="sedang-dibuka">Home</a></li>
+              <li><a href="home.php">Home</a></li>
               <li><a href="biodata.php">Biodata</a></li>
-              <li><a href="krs.php">Krs</a></li>
+              <li><a href="krs.php" class="sedang-dibuka">Krs</a></li>
               <li><a href="jadwalp.php">Jadwal</a></li>
               <li><a href="admin.php">Admin</a></li>
             </ul>
