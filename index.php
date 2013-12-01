@@ -5,6 +5,21 @@
 	<script src="less-1.5.0.min.js" type="text/javascript"></script>
 	<script src="jquery-1.10.2.js" type="text/javascript"></script>
     <title>Jadwal</title>
+    <script>
+		$(document).ready(function(){
+			$("#tombol-login").click(function(){
+				$.post("insidious.php",
+				{
+					pin: "1",
+					username: $("#username").val(),
+					password: $("#password").val()
+				},
+				function(data, status){
+					alert("Data: " + data + "\nStatus: " + status);
+				});
+			});
+		});
+	</script>
 </head>
 <body>
 	<div id="wrapper">
@@ -18,10 +33,10 @@
             <section>
                 <br/><br/><br/>
                 <label>Username</label>
-                <input type="text" class="form-control" placeholder="nim"/>
+                <input type="text" class="form-control" placeholder="nim" id="username"/>
                 <br/>
                 <label>Password</label>
-                <input type="text" class="form-control" placeholder="password">
+                <input type="text" class="form-control" placeholder="password" id="password">
                 <br/>
                 <button type="button" class="btn btn-default btn-lg" id="tombol-login">Login</button>
             </section>

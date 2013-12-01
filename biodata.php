@@ -14,7 +14,6 @@
               <li><a href="biodata.php" class="sedang-dibuka">Biodata</a></li>
               <li><a href="krs.php">Krs</a></li>
               <li><a href="jadwalp.php">Jadwal</a></li>
-              <li><a href="admin.php">Admin</a></li>
             </ul>
             <ul id="logout-box">
               <li><a href="#" id="username-box">Username</a></li>
