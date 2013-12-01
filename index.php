@@ -13,16 +13,16 @@
 	<div id="center">
     	<article>
         	<h2>This is Article</h2>
-            <p>This is Paragraph</p>
-            <p>This is Paragraph</p>
         </article>
         <section>
         	<br/><br/><br/>
-        	<input type="text"/>
+        	<label>Username</label>
+    		<input type="text" class="form-control" placeholder="nim"/>
             <br/>
-        	<input type="text"/>
+        	<label>Password</label>
+    		<input type="text" class="form-control" placeholder="password">
             <br/>
-            <input type="button" class="btn" value="Login"/>
+            <button type="button" class="btn btn-default btn-lg" id="tombol-login">Login</button>
         </section>
     </div>
     <footer>
