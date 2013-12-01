@@ -24,6 +24,54 @@ header {
 	width: 100%;
 	min-width: 960px;
 	margin-top: -20px;
+	margin-bottom: 1em;
+}
+
+header nav {
+	margin-top: 20px;
+	background-color: black;
+  	height: 50px;
+}
+
+header nav ul {
+	font-family: Arial, Verdana;
+	font-size: 20px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+header nav ul li {
+	display: block;
+	position: relative;
+	float: left;
+}
+
+header nav ul li a {
+	display: block;
+	text-decoration: none;
+	padding: 7px 15px 3px 15px;
+	background: #2C5463;
+	color: #ffffff; 
+	margin-left: 1px;
+	white-space: nowrap;
+	height: 50px;
+	width: 120px;
+	text-align: center;
+}
+
+header nav ul li a:hover {
+	background: #617F8A;
+	text-decoration: none;
+}
+
+header nav ul li #username-box:hover {
+	background: red;
+	text-decoration: none;
+}
+
+header nav #logout-box {
+	float: right;
 }
 
 h1{
@@ -38,6 +86,10 @@ h1{
 
 #center article {
 	.column(8);
+}
+
+#center #article-home {
+	.column(12);
 }
 
 #center section {
@@ -84,6 +136,10 @@ footer {
 	float: right;
 	width: 150px;
 	margin-right: 22px;
+}
+
+.sedang-dibuka {
+	background-color: teal;
 }
 
 input[type="text"], 
