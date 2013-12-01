@@ -1,7 +1,7 @@
 <html>
 <head>
-    <link rel="stylesheet/less" type="text/css" href="styles.less" />
     <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet/less" type="text/css" href="styles.less"/>
 	<script src="less-1.5.0.min.js" type="text/javascript"></script>
 	<script src="jquery-1.10.2.js"></script>
     <title>Jadwal</title>
@@ -14,11 +14,19 @@
     	<article>
         	<h2>This is Article</h2>
             <p>This is Paragraph</p>
-            <input type="button" class="btn" value="Login"/>
+            <p>This is Paragraph</p>
         </article>
         <section>
-        	<h2>This is Section</h2>
+        	<br/><br/><br/>
+        	<input type="text"/>
+            <br/>
+        	<input type="text"/>
+            <br/>
+            <input type="button" class="btn" value="Login"/>
         </section>
     </div>
+    <footer>
+    	<h2>This is Footer</h2>
+    </footer>
 </body>
 </html>

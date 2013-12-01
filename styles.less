@@ -1,5 +1,4 @@
 @import 'grid.less';
-@import 'reset.css';
 
 @columns: 12;
 @column-width: 60;
@@ -7,15 +6,14 @@
 
 header {
 	background-color: black;
+	width: 100%;
 	margin-bottom: 1em;
 	min-width: 960px;
 	margin-top: -1em;
 }
 
-header h1{
-	font-family: Georgia;
-	font-size: 1.5em;
-	padding: 1em;
+h1{
+	padding: 0.5em;
 	color: white;
 }
 
@@ -30,6 +28,8 @@ header h1{
 
 #center section {
 	.column(4);
+	background-color: teal;
+	height: 500px;
 }
 
 #center h2 {
@@ -39,4 +39,11 @@ header h1{
 	color: #666;
 	background-color: #ccc;
 	text-align: center;
+}
+
+footer {
+	background-color: black;
+	width: 100%;
+	min-width: 960px;
+	float: left;
 }
