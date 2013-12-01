@@ -15,7 +15,15 @@
 					password: $("#password").val()
 				},
 				function(data, status){
-					alert("Data: " + data + "\nStatus: " + status);
+					$("#pesan-login").css('color', 'white');
+					$("#pesan-login").css('font-size', 14);
+					$("#pesan-login").html(data);
+					if(data == "Anda telah login sebagai Mahasiswa"){
+						$("#pesan-tunggu").css('color', 'white');
+						$("#pesan-tunggu").css('font-size', 14);
+						$("#pesan-tunggu").html("Menuju halaman utama dalam 5 detik");
+						setTimeout(function(){ window.location = "home.php"; }, 5000);
+					}
 				});
 			});
 		});
@@ -31,7 +39,10 @@
                 <h2>This is Article</h2>
             </article>
             <section>
-                <br/><br/><br/>
+                <br/><br/>
+                <span id="pesan-login">&nbsp;</span>
+                <span id="pesan-tunggu">&nbsp;</span>
+                <br/><br/>
                 <label>Username</label>
                 <input type="text" class="form-control" placeholder="nim" id="username"/>
                 <br/>

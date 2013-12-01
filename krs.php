@@ -1,3 +1,11 @@
+<?php
+
+	include_once("config.php");
+	if(isset($_SESSION['uid']))
+		$akses = mysql_fetch_object(mysql_query("SELECT * FROM akun WHERE id = " . $_SESSION['uid']));
+
+?>
+
 <html>
 <head>
 	<link rel="stylesheet" href="bootstrap.css">
@@ -7,24 +15,30 @@
 	<title>Home</title>
 </head>
 <body>
-	<header>
-    	<nav>
-            <ul>
-              <li><a href="home.php">Home</a></li>
-              <li><a href="biodata.php">Biodata</a></li>
-              <li><a href="krs.php" class="sedang-dibuka">Krs</a></li>
-              <li><a href="jadwalp.php">Jadwal</a></li>
-            </ul>
-            <ul id="logout-box">
-              <li><a href="#" id="username-box">Username</a></li>
-              <li><a href="#">Logout</a></li>
-            </ul>
-        </nav>
-    </header>
-    <div id="center">
-        <article id="article-home">
-            <h2>This is Article</h2>
-        </article>
-    </div>
+	<?php if(isset($akses)){ ?>
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="home.php">Home</a></li>
+                    <li><a href="biodata.php">Biodata</a></li>
+                    <li><a href="krs.php" class="sedang-dibuka">Krs</a></li>
+                    <li><a href="jadwalp.php">Jadwal</a></li>
+                </ul>
+                <ul id="logout-box">
+                    <li><a href="#" id="username-box"><?php echo $akses->username; ?></a></li>
+                    <li><a href="logout.php">Logout</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div id="center">
+            <article id="article-home">
+                <h2>This is Article</h2>
+            </article>
+        </div>
+    <?php
+		}
+		else
+			header("Location: index.php");
+	?>
 </body>
 </html>
