@@ -4,6 +4,21 @@
 @column-width: 60;
 @gutter-width: 20;
 
+* {
+	margin: 0;
+}
+
+html, body {
+	height: 100%;
+}
+
+#wrapper {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -70px;
+}
+
 header {
 	background-color: black;
 	width: 100%;
@@ -42,14 +57,23 @@ h1{
 	color: #666;
 	background-color: #ccc;
 	text-align: center;
+	height: auto !important;
+	height: 100%;
+}
+
+#push {
+	width: 100%;
+	min-width: 960px;
+	height: 70px;
+	float: right;
 }
 
 footer {
 	background-color: black;
 	width: 100%;
 	min-width: 960px;
-	margin-top: 2em;
 	float: left;
+	height: 70px;
 }
 
 .form-control {

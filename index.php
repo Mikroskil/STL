@@ -7,23 +7,26 @@
     <title>Jadwal</title>
 </head>
 <body>
-	<header>
-    	<h1>This is Header</h1>
-    </header>
-	<div id="center">
-    	<article>
-        	<h2>This is Article</h2>
-        </article>
-        <section>
-        	<br/><br/><br/>
-        	<label>Username</label>
-    		<input type="text" class="form-control" placeholder="nim"/>
-            <br/>
-        	<label>Password</label>
-    		<input type="text" class="form-control" placeholder="password">
-            <br/>
-            <button type="button" class="btn btn-default btn-lg" id="tombol-login">Login</button>
-        </section>
+	<div id="wrapper">
+        <header>
+            <h1>This is Header</h1>
+        </header>
+        <div id="center">
+            <article>
+                <h2>This is Article</h2>
+            </article>
+            <section>
+                <br/><br/><br/>
+                <label>Username</label>
+                <input type="text" class="form-control" placeholder="nim"/>
+                <br/>
+                <label>Password</label>
+                <input type="text" class="form-control" placeholder="password">
+                <br/>
+                <button type="button" class="btn btn-default btn-lg" id="tombol-login">Login</button>
+            </section>
+        </div>
+        <div id="push"></div>
     </div>
     <footer>
     	<h2>This is Footer</h2>
