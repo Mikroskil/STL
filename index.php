@@ -1,3 +1,11 @@
+<?php
+
+    include_once("config.php");
+    if(isset($_SESSION['uid']))
+        $akses = mysql_fetch_object(mysql_query("SELECT * FROM akun WHERE id = " . $_SESSION['uid']));
+
+?>
+
 <html>
 <head>
     <link rel="stylesheet" href="bootstrap.css">
@@ -30,32 +38,36 @@
 	</script>
 </head>
 <body>
-	<div id="wrapper">
-        <header>
-            <h1>This is Header</h1>
-        </header>
-        <div id="center">
-            <article>
-                <h2>This is Article</h2>
-            </article>
-            <section>
-                <br/><br/>
-                <span id="pesan-login">&nbsp;</span>
-                <span id="pesan-tunggu">&nbsp;</span>
-                <br/><br/>
-                <label>Username</label>
-                <input type="text" class="form-control" placeholder="nim" id="username"/>
-                <br/>
-                <label>Password</label>
-                <input type="text" class="form-control" placeholder="password" id="password">
-                <br/>
-                <button type="button" class="btn btn-default btn-lg" id="tombol-login">Login</button>
-            </section>
+    <?php if(isset($akses))
+        header("Location: home.php");
+    else{ ?>
+        <div id="wrapper">
+            <header>
+                <h1>This is Header</h1>
+            </header>
+            <div id="center">
+                <article>
+                    <h2>This is Article</h2>
+                </article>
+                <section>
+                    <br/><br/>
+                    <span id="pesan-login">&nbsp;</span>
+                    <span id="pesan-tunggu">&nbsp;</span>
+                    <br/><br/>
+                    <label>Username</label>
+                    <input type="text" class="form-control" placeholder="nim" id="username"/>
+                    <br/>
+                    <label>Password</label>
+                    <input type="text" class="form-control" placeholder="password" id="password">
+                    <br/>
+                    <button type="button" class="btn btn-default btn-lg" id="tombol-login">Login</button>
+                </section>
+            </div>
+            <div id="push"></div>
         </div>
-        <div id="push"></div>
-    </div>
-    <footer>
-    	<h2>This is Footer</h2>
-    </footer>
+        <footer>
+            <h2>This is Footer</h2>
+        </footer>
+    <?php } ?>
 </body>
 </html>
