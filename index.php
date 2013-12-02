@@ -18,7 +18,7 @@
 					$("#pesan-login").css('color', 'white');
 					$("#pesan-login").css('font-size', 14);
 					$("#pesan-login").html(data);
-					if(data == "Anda telah login sebagai Mahasiswa"){
+					if(data == "Anda telah login sebagai Mahasiswa" || data == "Anda telah login sebagai Admin"){
 						$("#pesan-tunggu").css('color', 'white');
 						$("#pesan-tunggu").css('font-size', 14);
 						$("#pesan-tunggu").html("Menuju halaman utama dalam 5 detik");

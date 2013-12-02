@@ -19,13 +19,20 @@
         <header>
             <nav>
                 <ul>
-                    <li><a href="home.php" class="sedang-dibuka">Home</a></li>
-                    <li><a href="biodata.php">Biodata</a></li>
-                    <li><a href="krs.php">Krs</a></li>
-                    <li><a href="jadwalp.php">Jadwal</a></li>
+                    <?php if(isset($akses->level) == "admin"){ ?>
+                        <li><a href="home.php" class="sedang-dibuka">Home</a></li>
+                        <li><a href="biodata.php">Input</a></li>
+                        <li><a href="krs.php">Edit</a></li>
+                        <li><a href="jadwalp.php">Delete</a></li>
+                    <?php }else{ ?>
+                        <li><a href="home.php" class="sedang-dibuka">Home</a></li>
+                        <li><a href="biodata.php">Biodata</a></li>
+                        <li><a href="krs.php">Krs</a></li>
+                        <li><a href="jadwalp.php">Jadwal</a></li>
+                    <?php } ?>
                 </ul>
                 <ul id="logout-box">
-                    <li><a href="#" id="username-box"><?php echo $akses->username; ?></a></li>
+                    <li><a href="home.php" id="username-box"><?php echo $akses->username; ?></a></li>
                     <li><a href="logout.php">Logout</a></li>
                 </ul>
             </nav>
