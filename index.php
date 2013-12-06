@@ -23,11 +23,11 @@
 					password: $("#password").val()
 				},
 				function(data, status){
-					$("#pesan-login").css('color', 'white');
+					$("#pesan-login").css('color', 'black');
 					$("#pesan-login").css('font-size', 14);
 					$("#pesan-login").html(data);
 					if(data == "Anda telah login sebagai Mahasiswa" || data == "Anda telah login sebagai Admin"){
-						$("#pesan-tunggu").css('color', 'white');
+						$("#pesan-tunggu").css('color', 'black');
 						$("#pesan-tunggu").css('font-size', 14);
 						$("#pesan-tunggu").html("Menuju halaman utama dalam 5 detik");
 						setTimeout(function(){ window.location = "home.php"; }, 5000);
