@@ -20,7 +20,7 @@ html, body {
 }
 
 header {
-	background-color: black;
+	background-color: rgba(0,102,255,0.7);
 	width: 100%;
 	min-width: 960px;
 	margin-top: -20px;
@@ -98,8 +98,10 @@ h1{
 
 #center section {
 	.column(4);
-	background-color: teal;
+	background-color: white;
 	height: 500px;
+	border-left: solid;
+	padding: 10px;
 }
 
 #center section * {
@@ -134,12 +136,21 @@ footer {
 
 .form-control {
 	width: 250px;
+	height: 30px;
+	font-size: 16px;
 }
 
 #tombol-login {
 	float: right;
 	width: 150px;
-	margin-right: 22px;
+	color:rgba(0,102,255,0.9);
+	border:rgba(153,153,153,1) solid;
+}
+
+#tombol-login:hover {
+	color:#ffffff;
+	background-color:rgba(0,102,255,0.7);
+	border: rgba(0,102,255,0.4) solid;
 }
 
 .sedang-dibuka {
