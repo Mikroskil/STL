@@ -52,7 +52,7 @@
         <header>
             <nav>
                 <ul>
-                    <?php if(isset($akses->level) === "admin"){ ?>
+                    <?php if($akses->level == "admin"){ ?>
                         <li><a href="home.php">Home</a></li>
                         <li><a href="biodata.php">Input</a></li>
                         <li><a href="krs.php" class="sedang-dibuka">Edit</a></li>

@@ -20,7 +20,7 @@
         <header>
             <nav>
                 <ul>
-                    <?php if(isset($akses->level) === "admin"){ ?>
+                    <?php if($akses->level == "admin"){ ?>
                         <li><a href="home.php" class="sedang-dibuka">Home</a></li>
                         <li><a href="biodata.php">Input</a></li>
                         <li><a href="krs.php">Edit</a></li>
@@ -33,7 +33,7 @@
                     <?php } ?>
                 </ul>
                 <ul id="logout-box">
-                    <li><a href="home.php" id="username-box"><?php echo $akses->username; ?></a></li>
+                    <li><a href="home.php" id="username-box"><?php echo $akses->level; ?></a></li>
                     <li><a href="logout.php">Logout</a></li>
                 </ul>
             </nav>
