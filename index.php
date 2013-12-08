@@ -23,12 +23,8 @@
 					password: $("#password").val()
 				},
 				function(data, status){
-					$("#pesan-login").css('color', 'black');
-					$("#pesan-login").css('font-size', 14);
 					$("#pesan-login").html(data);
 					if(data == "Anda telah login sebagai Mahasiswa" || data == "Anda telah login sebagai Admin"){
-						$("#pesan-tunggu").css('color', 'black');
-						$("#pesan-tunggu").css('font-size', 14);
 						$("#pesan-tunggu").html("Menuju halaman utama dalam 5 detik");
 						setTimeout(function(){ window.location = "home.php"; }, 5000);
 					}
@@ -51,8 +47,8 @@
                 </article>
                 <section>
                     <br/><br/>
-                    <span id="pesan-login">&nbsp;</span>
-                    <span id="pesan-tunggu">&nbsp;</span>
+                    <div id="pesan-login"></div>
+                    <div id="pesan-tunggu"></div>
                     <br/><br/>
                     <label>Username</label>
                     <input type="text" class="form-control" placeholder="nim" id="username"/>
