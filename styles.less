@@ -75,9 +75,10 @@ header nav ul li #username-box {
 header nav ul li #username-box:hover {
 	background: steelblue;
 	border-bottom: hidden;
-	border-top: yellow solid 5px;
+	border-bottom: yellow solid 5px;
 	color: white;
 	text-decoration: none;
+	box-shadow: 0px 3px 1px #888888;
 }
 
 header nav #logout-box {
@@ -163,7 +164,8 @@ footer {
 
 .sedang-dibuka {
 	background-color: steelblue;
-	border-top: yellow solid 5px;
+	border-bottom: gold solid 5px;
+	box-shadow: 0px 3px 1px #888888;
 }
 
 #pesan-login, #pesan-tunggu {
@@ -172,12 +174,20 @@ footer {
 	font-size: 14px;
 }
 
-tr:nth-child(odd){
+#tabel_jadwal td:nth-child(even){
 	background:rgba(0,102,255,1);
 	color:rgba(255,255,255,1);
 	border-radius:8px;
 }
 
+td{
+	margin: 2px;
+	padding: 2px 5px;
+}
+
+table tr td{
+	border: 2px solid;
+}
 
 input[type="text"], 
 input[type="password"], 
@@ -225,10 +235,10 @@ textarea {
 
 .message h3
 {
-		 margin: 0 5px;
+		 margin: 0 30px;
 }
 
 .message p
 {
-		 margin: 0;													 
+		 margin: 0 30px;													 
 }
