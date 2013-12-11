@@ -15,22 +15,29 @@
     <title>Jadwal</title>
     <script>
 		$(document).ready(function(){
-			$("#tombol-login").click(function(){
-				$.post("insidious.php",
-				{
-					pin: "1",
-					username: $("#username").val(),
-					password: $("#password").val()
-				},
-				function(data, status){
-					$("#pesan-login").html(data);
-					if(data == "Anda telah login sebagai Mahasiswa" || data == "Anda telah login sebagai Admin"){
-						$("#pesan-tunggu").html("Menuju halaman utama dalam 5 detik");
-						setTimeout(function(){ window.location = "home.php"; }, 5000);
-					}
-				});
-			});
-		});
+            $("#tombol-login").click(function(){
+                goToInsidious();
+            });
+            $("#password").keypress(function(e) {
+                if(e.which == 13)
+                    goToInsidious();
+            });
+        });
+        function goToInsidious(){
+            $.post("insidious.php",
+            {
+                pin: "1",
+                username: $("#username").val(),
+                password: $("#password").val()
+            },
+            function(data, status){
+                $("#pesan-login").html(data);
+                if(data == "Anda telah login sebagai Mahasiswa" || data == "Anda telah login sebagai Admin"){
+                    $("#pesan-tunggu").html("Menuju halaman utama dalam 5 detik");
+                    setTimeout(function(){ window.location = "home.php"; }, 5000);
+                }
+            });
+        }
 	</script>
 </head>
 <body>
