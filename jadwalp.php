@@ -45,8 +45,19 @@
 				 
 		});       
 	</script>
-	<script>
-	
+	<script type="text/javascript">
+		function deleteMatkul(){
+            $.post("insidious.php",
+            {
+                pin: "5",
+                id_matkul: $("#id_matkul").text(),
+                
+            },
+            function(data,status){
+                //alert(document.getElementById("id_matkul").value);
+				alert(data);
+            });
+        }
 	
 	</script>
 	<title>Home</title>
@@ -94,7 +105,7 @@
             <article id="article-home">
                 <?php if($akses->level == "admin"){ ?>
                         <div id="main-content">
-							<table>
+							<table id="table_data">
 							<tr><td>kode Matkul</td>
 								<td>mata kuliah</td>
 								<td>semester</td>
@@ -106,10 +117,11 @@
 								while($x = mysql_fetch_object($query)):
 								?>
 									<?php echo "<tr>
-													<td>$x->Kode</td>
+													<td id='id_matkul'>$x->Kode</td>
 													<td>$x->mtk</td>
 													<td>$x->semester</td>
 													<td>$x->sks</td>
+													<td><button onclick = 'deleteMatkul()'>delete</button></td>
 												</tr>"; ?>
 								<?php endwhile; ?>
 							</table>
