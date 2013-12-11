@@ -106,7 +106,7 @@
 								while($x = mysql_fetch_object($query)):
 								?>
 									<?php echo "<tr>
-													<td>$x->Kode</td>
+													<td>$x->kode</td>
 													<td>$x->mtk</td>
 													<td>$x->semester</td>
 													<td>$x->sks</td>
