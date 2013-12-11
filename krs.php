@@ -33,6 +33,7 @@
 		}
 		
 		$(document).ready(function(){
+			$("#KontenUtamaEdit").load("cloud.php #PilihanEdit");
 				 hilang();
 				 for(var i=0;i<pesan_array.length;i++)
 				 {
@@ -43,7 +44,18 @@
 						  $(this).animate({top: -$(this).outerHeight()}, 500);
 				  });		 
 				 
-		});       
+		});
+		function menujuKe(a){
+            if(a == "Mata Kuliah")
+                $("#KontenUtamaEdit").load("cloud.php #FormEditMatkul");
+            else if(a == "Dosen")
+                $("#KontenUtamaEdit").load("cloud.php #FormEditDosen");
+            else if(a == "Jadwal Kuliah")
+                $("#KontenUtamaEdit").load("cloud.php #FormEditJadwal");
+        }
+        function back(){
+            $("#KontenUtamaEdit").load("cloud.php #PilihanInput");
+        }
 	</script>
 	<title>Home</title>
 </head>
@@ -88,7 +100,8 @@
         
         <div id="center">
             <article id="article-home">
-                <h2>This is Article</h2>
+                <div id="KontenUtamaEdit">
+                </div>
             </article>
         </div>
     <?php
