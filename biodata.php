@@ -58,7 +58,7 @@
             }
         }
         function back(){
-            document.getElementById('main-content').innerHTML = '<table><tr><td><input type="button" value="Matakuliah" onclick="matkul(this.value)"/></td></tr><tr><td><input type="button" value="Dosen" onclick="matkul(this.value)"/></td></tr></table>'
+            document.getElementById('main-content').innerHTML = '<table><tr><td><input type="button" value="Matakuliah" onclick="menujuKe(this.value)"/></td></tr><tr><td><input type="button" value="Dosen" onclick="menujuKe(this.value)"/></td></tr></table>'
         }
 
         function kirimMatkul(){
