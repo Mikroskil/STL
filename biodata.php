@@ -50,14 +50,13 @@
             if(a == "Matakuliah"){ 
                 document.getElementById('main-content').innerHTML = '<table><tr><td>Kode</td><td>Matakuliah</td><td>Semester</td><td>Sks</td></tr><tr><td><input type="text" id ="kode-matkul"/></td><td><input type="text" id ="matkul"/></td><td><select id="pilSemester"><option>I</option><option>II</option><option>III</option><option>IV</option><option>V</option><option>VI</option><option>VII</option><option>VIII</option></select></td><td><select id="pilSks"><option>2</option><option>3</option><option>4</option><option>6</option></select></td></tr><tr><td><input type="button" id="submit-matkul" value="submit" onclick="kirimMatkul()"/><input type="button" value="back" onclick="back()"/></td></tr></table>';
             }
-            else if(a == "Dosen"){
-                document.getElementById('main-content').innerHTML = '<table><tr><td>Nip</td><td>Nama</td></tr><tr><td><input type="text" id ="nip-dosen"/></td><td><input type="text" id ="nama-dosen"/></td></tr><tr><td><input type="button" id="submit-dosen" value="submit" onclick="kirimDosen()"/><input type="button" value="back" onclick="back()"/></td></tr></table>';
-            }
+            else if(a == "Dosen")
+                $("#main-content").load("cloud.php #FormInputDosen");
             else if(a == "JadwalKuliah")
-                $("#main-content").load("cloud.html #FormInputJadwal");
+                $("#main-content").load("cloud.php #FormInputJadwal");
         }
         function back(){
-            document.getElementById('main-content').innerHTML = '<table><tr><td><input type="button" value="Matakuliah" onclick="menujuKe(this.value)"/></td></tr><tr><td><input type="button" value="Dosen" onclick="menujuKe(this.value)"/></td></tr></table>'
+            $("#main-content").load("cloud.php #PilihanInput");
         }
 
         function kirimMatkul(){

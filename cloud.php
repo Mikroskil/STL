@@ -1,4 +1,20 @@
-    <table><tr><td>Nip</td><td>Nama</td></tr><tr><td><input type="text" id ="nip-dosen"/></td><td><input type="text" id ="nama-dosen"/></td></tr><tr><td><input type="button" id="submit-dosen" value="submit" onclick="kirimDosen()"/><input type="button" value="back" onclick="back()"/></td></tr></table>
+<?php
+    include_once("config.php");
+?>
+
+<table id="PilihanInput">
+    <tr>
+        <td><input type="button" value="Matakuliah" onClick="menujuKe(this.value)"/></td>
+    </tr>
+    <tr>
+        <td><input type="button" value="Dosen" onClick="menujuKe(this.value)"/></td>
+    </tr>
+    <tr>
+        <td><input type="button" value="JadwalKuliah" onClick="menujuKe(this.value)"/></td>
+    </tr>
+</table>
+
+<table id="FormInputDosen"><tr><td>Nip</td><td>Nama</td></tr><tr><td><input type="text" id ="nip-dosen"/></td><td><input type="text" id ="nama-dosen"/></td></tr><tr><td><input type="button" id="submit-dosen" value="submit" onclick="kirimDosen()"/><input type="button" value="back" onclick="back()"/></td></tr></table>
 
 <table align="center" id="FormInputJadwal" border="1">
 	<tr>
@@ -55,7 +71,7 @@
             $query = mysql_query("SELECT * FROM matakuliah");
             while($x = mysql_fetch_object($query)):
             ?>
-                <option><?php echo $x->mtk . "&nbsp;"; ?></option>
+                <option><?php echo $x->mtk; ?></option>
             <?php endwhile; ?>
             </select>
         </td>
@@ -68,7 +84,7 @@
             $query = mysql_query("SELECT * FROM dosen");
             while($x = mysql_fetch_object($query)):
             ?>
-                <option><?php echo $x->nama . "&nbsp;"; ?></option>
+                <option><?php echo $x->nama; ?></option>
             <?php endwhile; ?>
             </select>
         </td>
