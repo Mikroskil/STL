@@ -33,6 +33,7 @@
 		}
 		
 		$(document).ready(function(){
+			$("#KontenUtamaEdit").load("cloud.php #PilihanEdit");
 				 hilang();
 				 for(var i=0;i<pesan_array.length;i++)
 				 {
@@ -88,7 +89,8 @@
         
         <div id="center">
             <article id="article-home">
-                <h2>This is Article</h2>
+                <div id="KontenUtamaEdit">
+                </div>
             </article>
         </div>
     <?php
