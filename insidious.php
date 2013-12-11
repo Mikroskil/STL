@@ -4,7 +4,7 @@
 	
 	$pin = $_POST["pin"];
 	
-	if(isset($pin) == "1"){
+	if($pin == "1"){
 		$username = $_POST["username"];
 		$password = $_POST["password"];
 		
@@ -24,5 +24,15 @@
 		else
 			echo "Username tersebut belum terdaftar";
 	}
-	
+	else if($pin == "2"){
+		$kode = $_POST["kode"];
+		$matkul = $_POST["matkul"];
+		$save = mysql_query("INSERT INTO `matakuliah`(`kode`, `mtk`, `semester`, `sks`) VALUES ('".$kode."','".$matkul."','b',1)");
+	}
+	else if($pin == "3"){
+		echo $pin;
+		$nip = $_POST["nip"];
+		$nama = $_POST["nama"];
+		$save = mysql_query("INSERT INTO `dosen`(`nip`, `nama`) VALUES ('".$nip."','".$nama."')");
+	}
 ?>
