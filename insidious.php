@@ -49,4 +49,10 @@
 		$ruangan = $_POST["ruangan"];
 		$lantai = $_POST["lantai"];
 	}
+	
+	else if($pin == "5"){
+		$id_matkul = $_POST["id_matkul"];
+		$save = mysql_query("DELETE FROM `matakuliah` WHERE `Kode` = '$id_matkul'");
+		echo $id_matkul;
+	}		
 ?>
