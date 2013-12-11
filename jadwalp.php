@@ -117,11 +117,7 @@
 								while($x = mysql_fetch_object($query)):
 								?>
 									<?php echo "<tr>
-<<<<<<< HEAD
-													<td id='id_matkul'>$x->Kode</td>
-=======
-													<td>$x->kode</td>
->>>>>>> a53cea6786b68052f56bdbbec007e18b454ee1b2
+													<td id='id_matkul'>$x->kode</td>
 													<td>$x->mtk</td>
 													<td>$x->semester</td>
 													<td>$x->sks</td>
