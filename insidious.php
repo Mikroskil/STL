@@ -27,12 +27,13 @@
 	else if($pin == "2"){
 		$kode = $_POST["kode"];
 		$matkul = $_POST["matkul"];
-		$save = mysql_query("INSERT INTO `matakuliah`(`kode`, `mtk`, `semester`, `sks`) VALUES ('".$kode."','".$matkul."','b',1)");
+		$pilSem = $_POST["pilSem"];
+		$pilSks = $_POST["pilSks"];
+		$save = mysql_query("INSERT INTO matakuliah VALUES ('$kode', '$matkul', '$pilSem', '$pilSks')");
 	}
 	else if($pin == "3"){
-		echo $pin;
 		$nip = $_POST["nip"];
 		$nama = $_POST["nama"];
-		$save = mysql_query("INSERT INTO `dosen`(`nip`, `nama`) VALUES ('".$nip."','".$nama."')");
+		$save = mysql_query("INSERT INTO dosen VALUES ('$nip', '$nama')");
 	}
 ?>

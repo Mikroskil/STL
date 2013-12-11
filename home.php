@@ -33,7 +33,7 @@
                     <?php } ?>
                 </ul>
                 <ul id="logout-box">
-                    <li><a href="home.php" id="username-box"><?php echo $akses->level; ?></a></li>
+                    <li><a href="home.php" id="username-box"><?php echo $akses->username; ?></a></li>
                     <li><a href="logout.php">Logout</a></li>
                 </ul>
             </nav>
