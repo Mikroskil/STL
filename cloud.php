@@ -1,6 +1,6 @@
     <table><tr><td>Nip</td><td>Nama</td></tr><tr><td><input type="text" id ="nip-dosen"/></td><td><input type="text" id ="nama-dosen"/></td></tr><tr><td><input type="button" id="submit-dosen" value="submit" onclick="kirimDosen()"/><input type="button" value="back" onclick="back()"/></td></tr></table>
 
-<table align="center" id="FormInputJadwal">
+<table align="center" id="FormInputJadwal" border="1">
 	<tr>
         <td>Waktu</td>
         <td>
@@ -52,10 +52,10 @@
         <td>
         	<select id="matkulJ">
 			<?php 
-            $query = mysql_query("SELECT * FROM matkul");
+            $query = mysql_query("SELECT * FROM matakuliah");
             while($x = mysql_fetch_object($query)):
             ?>
-                <option><?php echo $x->nama . "&nbsp;" ?></option>
+                <option><?php echo $x->mtk . "&nbsp;"; ?></option>
             <?php endwhile; ?>
             </select>
         </td>
@@ -68,7 +68,7 @@
             $query = mysql_query("SELECT * FROM dosen");
             while($x = mysql_fetch_object($query)):
             ?>
-                <option><?php echo $x->nama . "&nbsp;" ?></option>
+                <option><?php echo $x->nama . "&nbsp;"; ?></option>
             <?php endwhile; ?>
             </select>
         </td>
@@ -101,6 +101,9 @@
         </td>
     </tr>
     <tr>
-    	<td colspan="2"><input type="button" value="Submit" onclick="hitung()"/></td>
+    	<td colspan="2">
+            <input type="button" value="Submit" onclick="hitung()"/>
+            <input type="button" value="back" onclick="back()"/>
+        </td>
     </tr>
 </table>
