@@ -45,6 +45,10 @@
 				 
 		});       
 	</script>
+	<script>
+	
+	
+	</script>
 	<title>Home</title>
 </head>
 <body>
@@ -88,7 +92,31 @@
 
         <div id="center">
             <article id="article-home">
-                <h2>This is Article</h2>
+                <?php if($akses->level == "admin"){ ?>
+                        <div id="main-content">
+							<table>
+							<tr><td>kode Matkul</td>
+								<td>mata kuliah</td>
+								<td>semester</td>
+								<td>sks</td>
+								<td>&nbsp;</td>
+							</tr>
+								<?php 
+								$query = mysql_query("SELECT * FROM matakuliah");
+								while($x = mysql_fetch_object($query)):
+								?>
+									<?php echo "<tr>
+													<td>$x->Kode</td>
+													<td>$x->mtk</td>
+													<td>$x->semester</td>
+													<td>$x->sks</td>
+												</tr>"; ?>
+								<?php endwhile; ?>
+							</table>
+						</div>
+                    <?php }else{ ?>
+                        <div id="main-content2"></div>
+                    <?php } ?>
             </article>
         </div>
     <?php
