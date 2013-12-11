@@ -1,18 +1,18 @@
 <?php
 
     include_once("config.php");
-    
+
 ?>
 
 <table id="PilihanInput">
     <tr>
-        <td><input type="button" value="Matakuliah" onClick="menujuKe(this.value)"/></td>
+        <td><input type="button" value="Mata Kuliah" onClick="menujuKe(this.value)"/></td>
     </tr>
     <tr>
         <td><input type="button" value="Dosen" onClick="menujuKe(this.value)"/></td>
     </tr>
     <tr>
-        <td><input type="button" value="JadwalKuliah" onClick="menujuKe(this.value)"/></td>
+        <td><input type="button" value="Jadwal Kuliah" onClick="menujuKe(this.value)"/></td>
     </tr>
 </table>
 

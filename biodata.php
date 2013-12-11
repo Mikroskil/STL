@@ -50,11 +50,11 @@
     <script type="text/javascript">
         
         function menujuKe(a){
-            if(a == "Matakuliah")
+            if(a == "Mata Kuliah")
                 $("#main-content").load("cloud.php #FormInputMatkul");
             else if(a == "Dosen")
                 $("#main-content").load("cloud.php #FormInputDosen");
-            else if(a == "JadwalKuliah")
+            else if(a == "Jadwal Kuliah")
                 $("#main-content").load("cloud.php #FormInputJadwal");
         }
         function back(){
