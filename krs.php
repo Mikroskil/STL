@@ -44,7 +44,18 @@
 						  $(this).animate({top: -$(this).outerHeight()}, 500);
 				  });		 
 				 
-		});       
+		});
+		function menujuKe(a){
+            if(a == "Mata Kuliah")
+                $("#KontenUtamaEdit").load("cloud.php #FormEditMatkul");
+            else if(a == "Dosen")
+                $("#KontenUtamaEdit").load("cloud.php #FormEditDosen");
+            else if(a == "Jadwal Kuliah")
+                $("#KontenUtamaEdit").load("cloud.php #FormEditJadwal");
+        }
+        function back(){
+            $("#KontenUtamaEdit").load("cloud.php #PilihanInput");
+        }
 	</script>
 	<title>Home</title>
 </head>
