@@ -56,7 +56,19 @@
             </select>
         </td>
     </tr>
-    
+    <tr>
+        <td>Hari</td>
+        <td>
+            <select id="hariJ">
+                <option>Senin</option>
+                <option>Selasa</option>
+                <option>Rabu</option>
+                <option>Kamis</option>
+                <option>Jumat</option>
+                <option>Sabtu</option>
+            </select>
+        </td>
+    </tr>
     <tr>
     	<td>Jam Mulai</td>
         <td>
