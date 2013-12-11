@@ -48,5 +48,7 @@
 		$gedung = $_POST["gedung"];
 		$ruangan = $_POST["ruangan"];
 		$lantai = $_POST["lantai"];
+
+		$input_jadwal = mysql_query("INSERT INTO jadwal (waktu, jurusan, semester, kelas, hari, mulai, matkul, dosen, gedung, ruangan, lantai) VALUES ('$waktu', '$jurusan', '$semester', '$kelas', '$hari', '$mulai', '$matkul', '$dosen', '$gedung', '$ruangan', '$lantai')");
 	}
 ?>
