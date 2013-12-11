@@ -36,4 +36,17 @@
 		$nama = $_POST["nama"];
 		$save = mysql_query("INSERT INTO dosen VALUES ('$nip', '$nama')");
 	}
+	else if($pin == "4"){
+		$waktu = $_POST["waktu"];
+		$jurusan = $_POST["jurusan"];
+		$semester = $_POST["semester"];
+		$kelas = $_POST["kelas"];
+		$hari = $_POST["hari"];
+		$mulai = $_POST["mulai"];
+		$matkul = $_POST["matkul"];
+		$dosen = $_POST["dosen"];
+		$gedung = $_POST["gedung"];
+		$ruangan = $_POST["ruangan"];
+		$lantai = $_POST["lantai"];
+	}
 ?>
