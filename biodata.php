@@ -1,57 +1,60 @@
 <?php
 
-	include_once("config.php");
-	if(isset($_SESSION['uid']))
-		$akses = mysql_fetch_object(mysql_query("SELECT * FROM akun WHERE id = " . $_SESSION['uid']));
+    include_once("config.php");
+    if(isset($_SESSION['uid']))
+        $akses = mysql_fetch_object(mysql_query("SELECT * FROM akun WHERE id = " . $_SESSION['uid']));
 
 ?>
 
 <html>
 <head>
-	<link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="bootstrap.css">
     <link rel="stylesheet/less" type="text/css" href="styles.less"/>
-	<script src="less-1.5.0.min.js" type="text/javascript"></script>
-	<script src="jquery-1.10.2.js" type="text/javascript"></script>
+    <script src="less-1.5.0.min.js" type="text/javascript"></script>
+    <script src="jquery-1.10.2.js" type="text/javascript"></script>
     <script>
-		var pesan_array = ['warning','error'];	 
-		function hilang()
-		{
-				 var h = new Array();
-				 for (i=0; i<pesan_array.length; i++)
-				 {
-						  h[i] = $('.' + pesan_array[i]).outerHeight();
-						  $('.' + pesan_array[i]).css('top', -h[i]);	  
-				 }
-		}
-		
-		function tampil(type)
-		{
-			$('.'+ type +'-trigger').click(function(){
-				  hilang();				  
-				  $('.'+type).animate({top:"0"}, 500);
-			});
-		}
-		
-		$(document).ready(function(){
-				 hilang();
-				 for(var i=0;i<pesan_array.length;i++)
-				 {
-					tampil(pesan_array[i]);
-				 }
-				 
-				 $('.message').click(function(){			  
-						  $(this).animate({top: -$(this).outerHeight()}, 500);
-				  });		 
-				 
-		});       
-	</script>
+        var pesan_array = ['warning','error'];   
+        function hilang()
+        {
+                 var h = new Array();
+                 for (i=0; i<pesan_array.length; i++)
+                 {
+                          h[i] = $('.' + pesan_array[i]).outerHeight();
+                          $('.' + pesan_array[i]).css('top', -h[i]);      
+                 }
+        }
+        
+        function tampil(type)
+        {
+            $('.'+ type +'-trigger').click(function(){
+                  hilang();               
+                  $('.'+type).animate({top:"0"}, 500);
+            });
+        }
+        
+        $(document).ready(function(){
+                 hilang();
+                 for(var i=0;i<pesan_array.length;i++)
+                 {
+                    tampil(pesan_array[i]);
+                 }
+                 
+                 $('.message').click(function(){              
+                          $(this).animate({top: -$(this).outerHeight()}, 500);
+                  });        
+                 
+        });       
+    </script>
     <script type="text/javascript">
-        function matkul(a){
+        function menujuKe(a){
             if(a == "Matakuliah"){ 
                 document.getElementById('main-content').innerHTML = '<table><tr><td>Kode</td><td>Matakuliah</td><td>Semester</td><td>Sks</td></tr><tr><td><input type="text" id ="kode-matkul"/></td><td><input type="text" id ="matkul"/></td><td><select id="pilSemester"><option>I</option><option>II</option><option>III</option><option>IV</option><option>V</option><option>VI</option><option>VII</option><option>VIII</option></select></td><td><select id="pilSks"><option>2</option><option>3</option><option>4</option><option>6</option></select></td></tr><tr><td><input type="button" id="submit-matkul" value="submit" onclick="kirimMatkul()"/><input type="button" value="back" onclick="back()"/></td></tr></table>';
             }
             else if(a == "Dosen"){
                 document.getElementById('main-content').innerHTML = '<table><tr><td>Nip</td><td>Nama</td></tr><tr><td><input type="text" id ="nip-dosen"/></td><td><input type="text" id ="nama-dosen"/></td></tr><tr><td><input type="button" id="submit-dosen" value="submit" onclick="kirimDosen()"/><input type="button" value="back" onclick="back()"/></td></tr></table>';
+            }
+            else if(a == "Matakuliah"){
+                document.getElementById('main-content').innerHTML = '<h1>Jad</h1>';
             }
         }
         function back(){
@@ -83,10 +86,10 @@
             });
         }
     </script>
-	<title>Home</title>
+    <title>Home</title>
 </head>
 <body>
-	<?php if(isset($akses)){ ?>
+    <?php if(isset($akses)){ ?>
         <header>
             <nav>
                 <ul>
@@ -129,19 +132,22 @@
                 <div id="main-content">
                     <table>
                         <tr>
-                            <td><input type="button" value="Matakuliah" onClick="matkul(this.value)"/></td>
+                            <td><input type="button" value="Matakuliah" onClick="menujuKe(this.value)"/></td>
                         </tr>
                         <tr>
-                            <td><input type="button" value="Dosen" onClick="matkul(this.value)"/></td>
+                            <td><input type="button" value="Dosen" onClick="menujuKe(this.value)"/></td>
+                        </tr>
+                        <tr>
+                            <td><input type="button" value="Jadwalkuliah" onClick="menujuKe(this.value)"/></td>
                         </tr>
                     </table>
                 </div>
             </article>
         </div>
     <?php
-		}
-		else
-			header("Location: index.php");
-	?>
+        }
+        else
+            header("Location: index.php");
+    ?>
 </body>
 </html>
