@@ -13,6 +13,7 @@
     <script src="less-1.5.0.min.js" type="text/javascript"></script>
     <script src="jquery-1.10.2.js" type="text/javascript"></script>
     <script>
+
         var pesan_array = ['warning','error'];   
         function hilang()
         {
@@ -33,6 +34,7 @@
         }
         
         $(document).ready(function(){
+            $("#main-content").load("cloud.php #PilihanInput");
                  hilang();
                  for(var i=0;i<pesan_array.length;i++)
                  {
@@ -46,10 +48,10 @@
         });       
     </script>
     <script type="text/javascript">
+        
         function menujuKe(a){
-            if(a == "Matakuliah"){ 
-                document.getElementById('main-content').innerHTML = '<table><tr><td>Kode</td><td>Matakuliah</td><td>Semester</td><td>Sks</td></tr><tr><td><input type="text" id ="kode-matkul"/></td><td><input type="text" id ="matkul"/></td><td><select id="pilSemester"><option>I</option><option>II</option><option>III</option><option>IV</option><option>V</option><option>VI</option><option>VII</option><option>VIII</option></select></td><td><select id="pilSks"><option>2</option><option>3</option><option>4</option><option>6</option></select></td></tr><tr><td><input type="button" id="submit-matkul" value="submit" onclick="kirimMatkul()"/><input type="button" value="back" onclick="back()"/></td></tr></table>';
-            }
+            if(a == "Matakuliah")
+                $("#main-content").load("cloud.php #FormInputMatkul");
             else if(a == "Dosen")
                 $("#main-content").load("cloud.php #FormInputDosen");
             else if(a == "JadwalKuliah")
@@ -128,17 +130,6 @@
         <div id="center">
             <article id="article-home">
                 <div id="main-content">
-                    <table>
-                        <tr>
-                            <td><input type="button" value="Matakuliah" onClick="menujuKe(this.value)"/></td>
-                        </tr>
-                        <tr>
-                            <td><input type="button" value="Dosen" onClick="menujuKe(this.value)"/></td>
-                        </tr>
-                        <tr>
-                            <td><input type="button" value="JadwalKuliah" onClick="menujuKe(this.value)"/></td>
-                        </tr>
-                    </table>
                 </div>
             </article>
         </div>
