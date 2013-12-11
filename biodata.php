@@ -43,12 +43,11 @@
                  
                  $('.message').click(function(){              
                           $(this).animate({top: -$(this).outerHeight()}, 500);
-                  });        
+                  });
                  
-        });       
+        });
     </script>
     <script type="text/javascript">
-        
         function menujuKe(a){
             if(a == "Mata Kuliah")
                 $("#main-content").load("cloud.php #FormInputMatkul");
@@ -60,7 +59,6 @@
         function back(){
             $("#main-content").load("cloud.php #PilihanInput");
         }
-
         function kirimMatkul(){
             $.post("insidious.php",
             {
@@ -83,6 +81,25 @@
             },
             function(data,status){
                 document.getElementById('main-content').innerHTML = '<table><tr><td><input type="button" value="Matakuliah" onclick="matkul(this.value)"/></td></tr><tr><td><input type="button" value="Dosen" onclick="matkul(this.value)"/></td></tr></table>'
+            });
+        }
+        function kirimJadwal(){
+            $.post("insidious.php",
+            {
+                pin: "4",
+                waktu: waktuJ.options[waktuJ.selectedIndex].text,
+                jurusan: jurusanJ.options[jurusanJ.selectedIndex].text,
+                semester: semesterJ.options[semesterJ.selectedIndex].text,
+                kelas: kelasJ.options[kelasJ.selectedIndex].text,
+                mulai: mulaiJ.options[mulaiJ.selectedIndex].text,
+                matkul: matkulJ.options[matkulJ.selectedIndex].text,
+                dosen: dosenJ.options[dosenJ.selectedIndex].text,
+                gedung: gedungJ.options[gedungJ.selectedIndex].text,
+                ruangan: ruanganJ.options[ruanganJ.selectedIndex].text,
+                lantai: lantaiJ.options[lantaiJ.selectedIndex].text,
+            },
+            function(data,status){
+                alert(data);
             });
         }
     </script>
