@@ -154,15 +154,31 @@
 
 <table id="FormEditDosen">
     <tr>
+        <td colspan="2">Nama</td>
+    </tr>
+    <?php 
+        $query = mysql_query("SELECT * FROM dosen");
+        while($x = mysql_fetch_object($query)):
+        ?>
+        <?php echo '<tr><td>'.$x->nama.'</td><td><input type="button" onclick="menujuKeFormEdit('.$x->nip.')"/></td></tr>'; ?>
+    <?php endwhile; ?>
+    <tr>
+        <td colspan="2"><input type="button" id="submit-dosen" value="submit" onclick="kirimDosen()"/><input type="button" value="back" onclick="back()"/></td>
+    </tr>
+</table>
+
+<table id="FormEditDosenSingle">
+    <tr>
+        <td>Nip</td>
         <td>Nama</td>
     </tr>
     <?php 
         $query = mysql_query("SELECT * FROM dosen");
         while($x = mysql_fetch_object($query)):
         ?>
-        <?php echo '<tr><td><input type="text" value="'.$x->nama.'" id ="'.$x->nip.'"/></td></tr>'; ?>
+        <?php echo '<tr><td>'.$x->nama.'</td><td><input type="button" onclick="menujuKeFormEdit('.$x->nip.')"/></td></tr>'; ?>
     <?php endwhile; ?>
     <tr>
-        <td><input type="button" id="submit-dosen" value="submit" onclick="kirimDosen()"/><input type="button" value="back" onclick="back()"/></td>
+        <td colspan="2"><input type="button" id="submit-dosen" value="submit" onclick="kirimDosen()"/><input type="button" value="back" onclick="back()"/></td>
     </tr>
 </table>

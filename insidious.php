@@ -56,5 +56,20 @@
 		$id_matkul = $_POST["id_matkul"];
 		$save = mysql_query("DELETE FROM `matakuliah` WHERE `Kode` = '$id_matkul'");
 		echo $id_matkul;
-	}		
+	}
+	else if($pin == "6"){
+		$nip = $_POST["nip"];
+		$q = mysql_fetch_object(mysql_query("SELECT * FROM dosen WHERE nip = '$nip'"));
+		echo '<table id="FormEditDosenSingle">
+    <tr>
+        <td>Nip</td>
+        <td>Nama</td>
+    </tr>
+        
+        <tr><td><input type="text" value="'.$q->nip.'"/></td><td><input type="text" value="'.$q->nama.'"/></td></tr>
+    <tr>
+        <td colspan="2"><input type="button" value="Submit" onclick="menujuKeFormEditUpdate('.$q->nip.')"/><input type="button" value="back" onclick="back()"/></td>
+    </tr>
+</table>';
+	}	
 ?>

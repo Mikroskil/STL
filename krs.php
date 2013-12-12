@@ -53,6 +53,16 @@
             else if(a == "Jadwal Kuliah")
                 $("#KontenUtamaEdit").load("cloud.php #FormEditJadwal");
         }
+        function menujuKeFormEdit(x){
+            $.post("insidious.php",
+            {
+                pin: "6",
+                nip: x
+            },
+            function(data,status){
+                $("#KontenUtamaEdit").html(data);
+            });
+        }
         function back(){
             $("#KontenUtamaEdit").load("cloud.php #PilihanInput");
         }
