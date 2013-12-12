@@ -163,7 +163,7 @@
         <?php echo '<tr><td>'.$x->nama.'</td><td><input type="button" onclick="menujuKeFormEdit('.$x->nip.')"/></td></tr>'; ?>
     <?php endwhile; ?>
     <tr>
-        <td colspan="2"><input type="button" id="submit-dosen" value="submit" onclick="kirimDosen()"/><input type="button" value="back" onclick="back()"/></td>
+        <td colspan="2"><input type="button" value="back" onclick="back()"/></td>
     </tr>
 </table>
 
