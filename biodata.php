@@ -103,6 +103,7 @@
                 $("#main-content").load("cloud.php #PilihanInput");
             });
         }
+        
     </script>
     <title>Home</title>
 </head>

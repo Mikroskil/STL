@@ -34,7 +34,7 @@
 	else if($pin == "3"){
 		$nip = $_POST["nip"];
 		$nama = $_POST["nama"];
-		$save = mysql_query("INSERT INTO dosen VALUES ('$nip', '$nama')");
+		$save = mysql_query("INSERT INTO dosen (nip, nama) VALUES ('$nip', '$nama')");
 	}
 	else if($pin == "4"){
 		$waktu = $_POST["waktu"];
@@ -66,10 +66,17 @@
         <td>Nama</td>
     </tr>
         
-        <tr><td><input type="text" value="'.$q->nip.'"/></td><td><input type="text" value="'.$q->nama.'"/></td></tr>
+        <tr><td><input type="text" id="nip-dosen" value="'.$q->nip.'"/></td><td><input type="text" id="nama-dosen" value="'.$q->nama.'"/></td></tr>
     <tr>
-        <td colspan="2"><input type="button" value="Submit" onclick="menujuKeFormEditUpdate('.$q->nip.')"/><input type="button" value="back" onclick="back()"/></td>
+        <td colspan="2"><input type="button" value="Submit" onclick="menujuKeFormEditUpdate('.$q->id.')"/><input type="button" value="back" onclick="back()"/></td>
     </tr>
 </table>';
-	}	
+	}
+	else if($pin == "7"){
+		$id = $_POST["id"];
+		$nip = $_POST["nip"];
+		$nama = $_POST["nama"];
+		echo "asd";
+		$q = mysql_query("UPDATE dosen SET nip='$nip', nama='$nama' WHERE id=$id");
+	}
 ?>

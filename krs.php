@@ -66,6 +66,18 @@
         function back(){
             $("#KontenUtamaEdit").load("cloud.php #PilihanInput");
         }
+        function menujuKeFormEditUpdate(x){
+            $.post("insidious.php",
+            {
+                pin: "7",
+                id: x,
+                nip: $("#nip-dosen").val(),
+                nama: $("#nama-dosen").val()
+            },
+            function(data,status){
+                $("#KontenUtamaEdit").load("cloud.php #PilihanInput");
+            });
+        }
 	</script>
 	<title>Home</title>
 </head>
