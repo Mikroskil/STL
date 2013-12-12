@@ -91,16 +91,15 @@ h1{
 }
 
 #center article {
-	border: solid 1px;
 	.column(8);
     padding: 10px;
+	position:relative;
 }
 
 #center article #article-menu {
 	.column(12);
 	height: 100px;
 	margin-left: -1px;
-	border: solid 1px;
 	float: left;
 }
 
@@ -109,11 +108,13 @@ h1{
 	height: 300px;
 	float: left;
 	margin-left: -1px;
-	border: solid 1px;
+	padding :20px;
+	position:relative;
 }
 
 #center #article-home {
 	.column(12.3);
+	position:relative;
 }
 
 #center #mhs-home {
@@ -179,6 +180,41 @@ footer {
 	background-color:rgba(0,102,255,0.7);
 	border: rgba(0,102,255,0.4) solid;
 }
+ul {
+    margin: 0;
+    list-style: none;
+}
+ul li {
+    display: block;
+    position: relative;
+    float: left;
+}
+.metro{
+	.column(3.68);
+	color:#ffffff;
+	background-color:rgba(0,102,255,0.7);
+	border: rgba(0,102,255,0.4) solid;
+	padding: 20px;
+	margin: 10px 6px;
+	height: 80px;
+	font-size: 25px;
+	text-align: center;
+	cursor: pointer;
+}
+
+.metro:hover{
+	color:#ffffff;
+	background-color:darkblue;
+	border: rgba(150,0,255,0.4) solid;
+	cursor: pointer;
+}
+
+.metro:active{
+	color:#ffffff;
+	background-color:black;
+	border-bottom: gold solid;
+	cursor: pointer;
+}
 
 .sedang-dibuka {
 	background-color: steelblue;
@@ -192,20 +228,42 @@ footer {
 	font-size: 14px;
 }
 
-#tabel_jadwal td:nth-child(even){
-	background:rgba(0,102,255,1);
-	color:rgba(255,255,255,1);
-	border-radius:8px;
-}
-
+table{
+	margin:0px;padding:10px;
+	width:100%;
+	height: 100%;
+	border:1px solid #000000;
+	
+	-moz-border-radius-bottomleft:7px;
+	-webkit-border-bottom-left-radius:7px;
+	border-bottom-left-radius:7px;
+	
+	-moz-border-radius-bottomright:7px;
+	-webkit-border-bottom-right-radius:7px;
+	border-bottom-right-radius:7px;
+	
+	-moz-border-radius-topright:7px;
+	-webkit-border-top-right-radius:7px;
+	border-top-right-radius:7px;
+	
+	-moz-border-radius-topleft:7px;
+	-webkit-border-top-left-radius:7px;
+	border-top-left-radius:7px;
+	}
+tr:nth-child(odd){ background-color:#aaaaff; }
+tr:nth-child(even){ background-color:#ffffff; }
 td{
-	margin: 2px;
-	padding: 2px 5px;
+	vertical-align:middle;
+	border:1px solid #000000;
+	border-width:0px 1px 1px 0px;
+	text-align:center;
+	padding:8px;
+	font-size:14px;
+	font-family:Arial;
+	font-weight:bold;
+	color:#000000;
 }
 
-table tr td{
-	border: 2px solid;
-}
 
 input[type="text"], 
 input[type="password"], 
