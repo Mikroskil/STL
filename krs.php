@@ -155,7 +155,21 @@
                 </div>
             </article>
             <?php }else{ ?>
-                <div id="#mhs-home">
+                <div id="mhs-home">
+                    <table>
+                        <tr>
+                            <td>Kode</td>
+                            <td>Matakuliah</td>
+                            <td>Semester</td>
+                            <td>Sks</td>
+                        </tr>
+                        <?php 
+                        $query = mysql_query("SELECT * FROM matakuliah");
+                        while($x = mysql_fetch_object($query)):
+                        ?>
+                            <?php echo '<tr><td>'.$x->kode.'</td><td>'.$x->mtk.'</td><td>'.$x->semester.'</td><td>'.$x->sks.'</td></tr>'; ?>
+                        <?php endwhile; ?>
+                    </table>
                 </div>
             <?php } ?>
         </div>
