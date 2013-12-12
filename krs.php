@@ -53,7 +53,7 @@
             else if(a == "Jadwal Kuliah")
                 $("#KontenUtamaEdit").load("cloud.php #FormEditJadwal");
         }
-        function menujuKeFormEdit(x){
+        function menujuKeFormDosenEdit(x){
             $.post("insidious.php",
             {
                 pin: "6",
@@ -66,13 +66,37 @@
         function back(){
             $("#KontenUtamaEdit").load("cloud.php #PilihanInput");
         }
-        function menujuKeFormEditUpdate(x){
+        function menujuKeFormDosenEditUpdate(x){
             $.post("insidious.php",
             {
                 pin: "7",
                 id: x,
                 nip: $("#nip-dosen").val(),
                 nama: $("#nama-dosen").val()
+            },
+            function(data,status){
+                $("#KontenUtamaEdit").load("cloud.php #PilihanInput");
+            });
+        }
+        function menujuKeFormMatkulEdit(x){
+            $.post("insidious.php",
+            {
+                pin: "8",
+                id: x
+            },
+            function(data,status){
+                $("#KontenUtamaEdit").html(data);
+            });
+        }
+        function menujuKeFormMatkulEditUpdate(x){
+            $.post("insidious.php",
+            {
+                pin: "9",
+                id: x,
+                kode: $("#kode-matkul").val(),
+                matkul: $("#matkul").val(),
+                pilSem: pilSemester.options[pilSemester.selectedIndex].text,
+                pilSks: pilSks.options[pilSks.selectedIndex].text
             },
             function(data,status){
                 $("#KontenUtamaEdit").load("cloud.php #PilihanInput");

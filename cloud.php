@@ -160,7 +160,7 @@
         $query = mysql_query("SELECT * FROM dosen");
         while($x = mysql_fetch_object($query)):
         ?>
-        <?php echo '<tr><td>'.$x->nama.'</td><td><input type="button" onclick="menujuKeFormEdit('.$x->nip.')"/></td></tr>'; ?>
+        <?php echo '<tr><td>'.$x->nama.'</td><td><input type="button" onclick="menujuKeFormDosenEdit('.$x->nip.')"/></td></tr>'; ?>
     <?php endwhile; ?>
     <tr>
         <td colspan="2"><input type="button" value="back" onclick="back()"/></td>
@@ -176,9 +176,37 @@
         $query = mysql_query("SELECT * FROM dosen");
         while($x = mysql_fetch_object($query)):
         ?>
-        <?php echo '<tr><td>'.$x->nama.'</td><td><input type="button" onclick="menujuKeFormEdit('.$x->nip.')"/></td></tr>'; ?>
+        <?php echo '<tr><td>'.$x->nama.'</td><td><input type="button" onclick="menujuKeFormDosenEdit('.$x->nip.')"/></td></tr>'; ?>
     <?php endwhile; ?>
     <tr>
         <td colspan="2"><input type="button" id="submit-dosen" value="submit" onclick="kirimDosen()"/><input type="button" value="back" onclick="back()"/></td>
+    </tr>
+</table>
+
+<table id="FormEditMatkul">
+    <tr>
+        <td>Kode</td>
+        <td>Matakuliah</td>
+        <td>Semester</td>
+        <td>Sks</td>
+    </tr>
+    <?php 
+        $query = mysql_query("SELECT * FROM matakuliah");
+        while($x = mysql_fetch_object($query)):
+        ?>
+        <?php echo '
+        <tr>
+            <td>'.$x->kode.'</td>
+            <td>'.$x->mtk.'</td>>
+            <td>'.$x->semester.'</td>
+            <td>'.$x->sks.'</td>
+            <td><input type="button" onclick="menujuKeFormMatkulEdit('.$x->id.')"/></td>
+        </tr>
+        '; ?>
+    <?php endwhile; ?>
+    <tr>
+        <td>
+            <input type="button" value="back" onclick="back()"/>
+        </td>
     </tr>
 </table>
