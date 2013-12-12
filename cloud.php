@@ -2,31 +2,28 @@
 
     include_once("config.php");
 
-?>
+?><head>
+	<link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet/less" type="text/css" href="styles.less"/>
+    <script src="less-1.5.0.min.js" type="text/javascript"></script>
+    <script src="jquery-1.10.2.js" type="text/javascript"></script>
+</head>
 
-<table id="PilihanInput">
-    <tr>
-        <td><input type="button" value="Mata Kuliah" onClick="menujuKe(this.value)"/></td>
-    </tr>
-    <tr>
-        <td><input type="button" value="Dosen" onClick="menujuKe(this.value)"/></td>
-    </tr>
-    <tr>
-        <td><input type="button" value="Jadwal Kuliah" onClick="menujuKe(this.value)"/></td>
-    </tr>
-</table>
+<div id="PilihanInput">
+    <ul>
+        <li><div class="metro" onClick="menujuKe('Mata Kuliah')">Mata Kuliah</div></li>
+        <li><div class="metro" onClick="menujuKe('Dosen')">Dosen</div></li>
+        <li><div class="metro"onClick="menujuKe('Jadwal Kuliah')">Jadwal Kuliah</div></li>
+    </ul>
+</div>
 
-<table id="PilihanEdit">
-    <tr>
-        <td><input type="button" value="Mata Kuliah" onClick="menujuKe(this.value)"/></td>
-    </tr>
-    <tr>
-        <td><input type="button" value="Dosen" onClick="menujuKe(this.value)"/></td>
-    </tr>
-    <tr>
-        <td><input type="button" value="Jadwal Kuliah" onClick="menujuKe(this.value)"/></td>
-    </tr>
-</table>
+<div id="PilihanEdit">
+    <ul>
+        <li><div class="metro" onClick="menujuKe('Mata Kuliah')">Mata Kuliah</div></li>
+        <li><div class="metro" onClick="menujuKe('Dosen')">Dosen</div></li>
+        <li><div class="metro"onClick="menujuKe('Jadwal Kuliah')">Jadwal Kuliah</div></li>
+    </ul>
+</div>
 
 <table id="FormInputMatkul"><tr><td>Kode</td><td>Matakuliah</td><td>Semester</td><td>Sks</td></tr><tr><td><input type="text" id ="kode-matkul"/></td><td><input type="text" id ="matkul"/></td><td><select id="pilSemester"><option>I</option><option>II</option><option>III</option><option>IV</option><option>V</option><option>VI</option><option>VII</option><option>VIII</option></select></td><td><select id="pilSks"><option>2</option><option>3</option><option>4</option><option>6</option></select></td></tr><tr><td><input type="button" id="submit-matkul" value="submit" onclick="kirimMatkul()"/><input type="button" value="back" onclick="back()"/></td></tr></table>
 
