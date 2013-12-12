@@ -33,7 +33,7 @@
 		}
 		
 		$(document).ready(function(){
-			$("#KontenUtamaEdit").load("cloud.php #PilihanEdit");
+			$("#article-menu").load("cloud.php #PilihanEdit");
 				 hilang();
 				 for(var i=0;i<pesan_array.length;i++)
 				 {
