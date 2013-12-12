@@ -69,7 +69,7 @@
                 pilSks: pilSks.options[pilSks.selectedIndex].text
             },
             function(data,status){
-                document.getElementById('main-content').innerHTML = '<table><tr><td><input type="button" value="Matakuliah" onclick="matkul(this.value)"/></td></tr><tr><td><input type="button" value="Dosen" onclick="matkul(this.value)"/></td></tr></table>'
+                $("#main-content").load("cloud.php #PilihanInput");
             });
         }
         function kirimDosen(){
@@ -80,7 +80,7 @@
                 nama: $("#nama-dosen").val()
             },
             function(data,status){
-                document.getElementById('main-content').innerHTML = '<table><tr><td><input type="button" value="Matakuliah" onclick="matkul(this.value)"/></td></tr><tr><td><input type="button" value="Dosen" onclick="matkul(this.value)"/></td></tr></table>'
+                $("#main-content").load("cloud.php #PilihanInput");
             });
         }
         function kirimJadwal(){
@@ -100,7 +100,7 @@
                 lantai: lantaiJ.options[lantaiJ.selectedIndex].text
             },
             function(data,status){
-                alert(data);
+                $("#main-content").load("cloud.php #PilihanInput");
             });
         }
     </script>
