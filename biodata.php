@@ -13,7 +13,6 @@
     <script src="less-1.5.0.min.js" type="text/javascript"></script>
     <script src="jquery-1.10.2.js" type="text/javascript"></script>
     <script>
-
         var pesan_array = ['warning','error'];   
         function hilang()
         {
@@ -148,11 +147,15 @@
 
         <div id="center">
             <article id="article-home">
-				<?php if($akses->level == "admin"){ ?>
-                        <div id="main-content"></div>
-                    <?php }else{ ?>
-                        <div id="main-content2"></div>
-                    <?php } ?>
+                <div id="article-menu">
+                </div>
+                <div id="article-konten">
+    				<?php if($akses->level == "admin"){ ?>
+                            <div id="main-content"></div>
+                        <?php }else{ ?>
+                            <div id="main-content2"></div>
+                        <?php } ?>
+                </div>
             </article>
         </div>
     <?php

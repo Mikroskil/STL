@@ -104,6 +104,9 @@
         <div id="center">
             <article id="article-home">
                 <?php if($akses->level == "admin"){ ?>
+                		<div id="article-menu">
+                </div>
+                <div id="article-konten">
                         <div id="main-content">
 							<table id="table_data">
 							<tr><td>kode Matkul</td>
@@ -126,6 +129,7 @@
 								<?php endwhile; ?>
 							</table>
 						</div>
+					</div>
                     <?php }else{ ?>
                         <div id="main-content2"></div>
                     <?php } ?>

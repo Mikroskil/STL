@@ -121,8 +121,13 @@
         </ul>
         
         <div id="center">
+
             <article id="article-home">
+                <div id="article-menu">
+                </div>
+                <div id="article-konten">
                 <div id="KontenUtamaEdit">
+                </div>
                 </div>
             </article>
         </div>
