@@ -153,7 +153,7 @@
                 <div id="article-konten">
                         <div id="main-content"></div>
                 <?php }else{ ?>
-                <div id="article-menu">
+                <div id="article-menu2">
                 </div>
                 <div id="article-konten">
                         <div id="main-content2"></div>
