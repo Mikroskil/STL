@@ -33,7 +33,7 @@
         }
         
         $(document).ready(function(){
-            $("#main-content").load("cloud.php #PilihanInput");
+            $("#article-menu").load("cloud.php #PilihanInput");
                  hilang();
                  for(var i=0;i<pesan_array.length;i++)
                  {
@@ -49,14 +49,14 @@
     <script type="text/javascript">
         function menujuKe(a){
             if(a == "Mata Kuliah")
-                $("#main-content").load("cloud.php #FormInputMatkul");
+                $("#article-konten").load("cloud.php #FormInputMatkul");
             else if(a == "Dosen")
-                $("#main-content").load("cloud.php #FormInputDosen");
+                $("#article-konten").load("cloud.php #FormInputDosen");
             else if(a == "Jadwal Kuliah")
-                $("#main-content").load("cloud.php #FormInputJadwal");
+                $("#article-konten").load("cloud.php #FormInputJadwal");
         }
         function back(){
-            $("#main-content").load("cloud.php #PilihanInput");
+            $("#article-menu").load("cloud.php #PilihanInput");
         }
         function kirimMatkul(){
             $.post("insidious.php",
@@ -68,7 +68,7 @@
                 pilSks: pilSks.options[pilSks.selectedIndex].text
             },
             function(data,status){
-                $("#main-content").load("cloud.php #PilihanInput");
+                $("#article-menu").load("cloud.php #PilihanInput");
             });
         }
         function kirimDosen(){
@@ -79,7 +79,7 @@
                 nama: $("#nama-dosen").val()
             },
             function(data,status){
-                $("#main-content").load("cloud.php #PilihanInput");
+                $("#article-menu").load("cloud.php #PilihanInput");
             });
         }
         function kirimJadwal(){
@@ -99,7 +99,7 @@
                 lantai: lantaiJ.options[lantaiJ.selectedIndex].text
             },
             function(data,status){
-                $("#main-content").load("cloud.php #PilihanInput");
+                $("#article-menu").load("cloud.php #PilihanInput");
             });
         }
         
@@ -147,14 +147,17 @@
 
         <div id="center">
             <article id="article-home">
+				<?php if($akses->level == "admin"){ ?>
                 <div id="article-menu">
                 </div>
                 <div id="article-konten">
-    				<?php if($akses->level == "admin"){ ?>
-                            <div id="main-content"></div>
-                        <?php }else{ ?>
-                            <div id="main-content2"></div>
-                        <?php } ?>
+                        <div id="main-content"></div>
+                <?php }else{ ?>
+                <div id="article-menu">
+                </div>
+                <div id="article-konten">
+                        <div id="main-content2"></div>
+                    <?php } ?>
                 </div>
             </article>
         </div>
