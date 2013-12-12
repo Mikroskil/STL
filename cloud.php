@@ -210,3 +210,45 @@
         </td>
     </tr>
 </table>
+
+<table id="FormEditJadwal">
+    <tr>
+        <td>Waktu</td>
+        <td>Jurusan</td>
+        <td>Semester</td>
+        <td>Kelas</td>
+        <td>Hari</td>
+        <td>Jam Mulai</td>
+        <td>Mata Kuliah</td>
+        <td>Nama Dosen</td>
+        <td>Gedung</td>
+        <td>Ruangan</td>
+        <td>Lantai</td>
+    </tr>
+    <?php 
+        $query = mysql_query("SELECT * FROM jadwal");
+        while($x = mysql_fetch_object($query)):
+        ?>
+        <?php echo '
+        <tr>
+            <td>'.$x->waktu.'</td>
+            <td>'.$x->jurusan.'</td>>
+            <td>'.$x->semester.'</td>
+            <td>'.$x->kelas.'</td>
+            <td>'.$x->hari.'</td>
+            <td>'.$x->mulai.'</td>
+            <td>'.$x->matkul.'</td>
+            <td>'.$x->dosen.'</td>
+            <td>'.$x->gedung.'</td>
+            <td>'.$x->ruangan.'</td>
+            <td>'.$x->lantai.'</td>
+            <td><input type="button" onclick="menujuKeFormJadwalEdit('.$x->id.')"/></td>
+        </tr>
+        '; ?>
+    <?php endwhile; ?>
+    <tr>
+        <td colspan="2">
+            <input type="button" value="back" onclick="back()"/>
+        </td>
+    </tr>
+</table>
