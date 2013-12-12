@@ -145,7 +145,7 @@
         </ul>
         
         <div id="center">
-
+            <?php if($akses->level == "admin"){ ?>
             <article id="article-home">
                 <div id="article-menu">
                 </div>
@@ -154,6 +154,10 @@
                 </div>
                 </div>
             </article>
+            <?php }else{ ?>
+                <div id="#mhs-home">
+                </div>
+            <?php } ?>
         </div>
     <?php
 		}
