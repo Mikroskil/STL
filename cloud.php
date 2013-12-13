@@ -251,3 +251,9 @@
         <td>Data berhasil diedit</td>
     </tr>
 </table>
+
+<table id="sukses-delete">
+    <tr>
+        <td>Data berhasil dihapus</td>
+    </tr>
+</table>

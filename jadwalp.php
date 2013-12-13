@@ -46,16 +46,15 @@
 		});       
 	</script>
 	<script type="text/javascript">
-		function deleteMatkul(){
+		function deleteMatkul(x){
             $.post("insidious.php",
             {
                 pin: "5",
-                id_matkul: $("#id_matkul").text(),
+                id: x
                 
             },
             function(data,status){
-                //alert(document.getElementById("id_matkul").value);
-				alert(data);
+            	$("#main-content").load("cloud.php #sukses-delete");
             });
         }
 	
@@ -109,11 +108,11 @@
                 <div id="article-konten">
                         <div id="main-content">
 							<table id="table_data">
-							<tr><td>kode Matkul</td>
-								<td>mata kuliah</td>
-								<td>semester</td>
-								<td>sks</td>
-								<td>&nbsp;</td>
+							<tr><td>Kode</td>
+								<td>Matakuliah</td>
+								<td>Semester</td>
+								<td>Sks</td>
+								<td>Delete</td>
 							</tr>
 								<?php 
 								$query = mysql_query("SELECT * FROM matakuliah");
@@ -124,7 +123,7 @@
 													<td>$x->mtk</td>
 													<td>$x->semester</td>
 													<td>$x->sks</td>
-													<td><button onclick = 'deleteMatkul()'>delete</button></td>
+													<td><input type='button' onclick = 'deleteMatkul(".$x->id.")'/></td>
 												</tr>"; ?>
 								<?php endwhile; ?>
 							</table>
