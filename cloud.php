@@ -239,3 +239,15 @@
         '; ?>
     <?php endwhile; ?>
 </table>
+
+<table id="sukses-input">
+    <tr>
+        <td>Data berhasil diinput</td>
+    </tr>
+</table>
+
+<table id="sukses-edit">
+    <tr>
+        <td>Data berhasil diedit</td>
+    </tr>
+</table>

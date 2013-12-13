@@ -75,7 +75,7 @@
                 nama: $("#nama-dosen").val()
             },
             function(data,status){
-                $("#article-menu").load("cloud.php #PilihanInput");
+                $("#KontenUtamaEdit").load("cloud.php #sukses-edit");
             });
         }
         function menujuKeFormMatkulEdit(x){
@@ -99,7 +99,7 @@
                 pilSks: pilSks.options[pilSks.selectedIndex].text
             },
             function(data,status){
-                $("#article-menu").load("cloud.php #PilihanInput");
+                $("#KontenUtamaEdit").load("cloud.php #sukses-edit");
             });
         }
         function menujuKeFormJadwalEdit(x){

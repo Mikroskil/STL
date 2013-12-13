@@ -68,7 +68,7 @@
                 pilSks: pilSks.options[pilSks.selectedIndex].text
             },
             function(data,status){
-                $("#article-menu").load("cloud.php #PilihanInput");
+                $("#article-konten").load("cloud.php #sukses-input");
             });
         }
         function kirimDosen(){
@@ -79,7 +79,7 @@
                 nama: $("#nama-dosen").val()
             },
             function(data,status){
-                $("#article-menu").load("cloud.php #PilihanInput");
+                $("#article-konten").load("cloud.php #sukses-input");
             });
         }
         function kirimJadwal(){
@@ -99,7 +99,7 @@
                 lantai: lantaiJ.options[lantaiJ.selectedIndex].text
             },
             function(data,status){
-                $("#article-menu").load("cloud.php #PilihanInput");
+                $("#article-konten").load("cloud.php #sukses-input");
             });
         }
         
