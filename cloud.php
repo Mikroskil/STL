@@ -144,7 +144,6 @@
     <tr>
     	<td colspan="2">
             <input type="button" value="Submit" onclick="kirimJadwal()"/>
-            <input type="button" value="back" onclick="back()"/>
         </td>
     </tr>
 </table>
