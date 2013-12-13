@@ -151,17 +151,16 @@
 
 <table id="FormEditDosen">
     <tr>
-        <td colspan="2">Nama</td>
+        <td>Nip</td>
+        <td>Nama</td>
+        <td>Edit</td>
     </tr>
     <?php 
         $query = mysql_query("SELECT * FROM dosen");
         while($x = mysql_fetch_object($query)):
         ?>
-        <?php echo '<tr><td>'.$x->nama.'</td><td><input type="button" onclick="menujuKeFormDosenEdit('.$x->nip.')"/></td></tr>'; ?>
+        <?php echo '<tr><td>'.$x->nip.'</td><td>'.$x->nama.'</td><td><input type="button" onclick="menujuKeFormDosenEdit('.$x->nip.')"/></td></tr>'; ?>
     <?php endwhile; ?>
-    <tr>
-        <td colspan="2"><input type="button" value="back" onclick="back()"/></td>
-    </tr>
 </table>
 
 <table id="FormEditDosenSingle">

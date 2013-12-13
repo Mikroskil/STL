@@ -68,7 +68,7 @@
         
         <tr><td><input type="text" id="nip-dosen" value="'.$q->nip.'"/></td><td><input type="text" id="nama-dosen" value="'.$q->nama.'"/></td></tr>
     <tr>
-        <td colspan="2"><input type="button" value="Submit" onclick="menujuKeFormDosenEditUpdate('.$q->id.')"/><input type="button" value="back" onclick="back()"/></td>
+        <td colspan="2"><input type="button" value="Submit" onclick="menujuKeFormDosenEditUpdate('.$q->id.')"/></td>
     </tr>
 </table>';
 	}
