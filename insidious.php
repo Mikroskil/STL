@@ -82,7 +82,7 @@
 		$id = $_POST["id"];
 		$q = mysql_fetch_object(mysql_query("SELECT * FROM matakuliah WHERE id = $id"));
 		echo '
-		<table id="FormEditMatkulSingle"><tr><td>Kode</td><td>Matakuliah</td><td>Semester</td><td>Sks</td></tr><tr><td><input type="text" id ="kode-matkul" value="'.$q->kode.'"/></td><td><input type="text" id ="matkul" value="'.$q->mtk.'"/></td><td>'.$q->semester.'<select id="pilSemester"><option>I</option><option>II</option><option>III</option><option>IV</option><option>V</option><option>VI</option><option>VII</option><option>VIII</option></select></td><td>'.$q->sks.'<select id="pilSks"><option>2</option><option>3</option><option>4</option><option>6</option></select></td></tr><tr><td><input type="button" id="submit-matkul" value="submit" onclick="menujuKeFormMatkulEditUpdate('.$q->id.')"/><input type="button" value="back" onclick="back()"/></td></tr></table>
+		<table id="FormEditMatkulSingle"><tr><td>Kode</td><td>Matakuliah</td><td>Semester</td><td>Sks</td></tr><tr><td><input type="text" id ="kode-matkul" value="'.$q->kode.'"/></td><td><input type="text" id ="matkul" value="'.$q->mtk.'"/></td><td>'.$q->semester.'&nbsp;<select id="pilSemester"><option>I</option><option>II</option><option>III</option><option>IV</option><option>V</option><option>VI</option><option>VII</option><option>VIII</option></select></td><td>'.$q->sks.'&nbsp;<select id="pilSks"><option>2</option><option>3</option><option>4</option><option>6</option></select></td></tr><tr><td colspan="4"><input type="button" id="submit-matkul" value="submit" onclick="menujuKeFormMatkulEditUpdate('.$q->id.')"/></td></tr></table>
 
 		';
 	}

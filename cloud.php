@@ -185,6 +185,7 @@
         <td>Matakuliah</td>
         <td>Semester</td>
         <td>Sks</td>
+        <td>Edit</td>
     </tr>
     <?php 
         $query = mysql_query("SELECT * FROM matakuliah");
@@ -200,11 +201,6 @@
         </tr>
         '; ?>
     <?php endwhile; ?>
-    <tr>
-        <td>
-            <input type="button" value="back" onclick="back()"/>
-        </td>
-    </tr>
 </table>
 
 <table id="FormEditJadwal">
