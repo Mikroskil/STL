@@ -61,7 +61,7 @@
                     <input type="text" class="form-control" placeholder="nim" id="username"/>
                     <br/>
                     <label>Password</label>
-                    <input type="text" class="form-control" placeholder="password" id="password">
+                    <input type="password" class="form-control" placeholder="password" id="password">
                     <br/>
                     <button type="button" class="btn btn-default btn-lg" id="tombol-login">Login</button>
                 </section>

@@ -157,7 +157,24 @@
                 </div>
                 <div id="article-konten">
                         <div id="main-content2"></div>
-                    <?php } ?>
+                <div id="mhs-home">
+                    <table>
+                        <tr>
+                            <td>Nama</td>
+                            <td>Matakuliah</td>
+                            <td>Semester</td>
+                            <td>Sks</td>
+                            <td>Pilih</td>
+                        </tr>
+                        <?php 
+                        $query = mysql_query("SELECT * FROM matakuliah");
+                        while($x = mysql_fetch_object($query)):
+                        ?>
+                            <?php echo '<tr><td>'.$x->kode.'</td><td>'.$x->mtk.'</td><td>'.$x->semester.'</td><td>'.$x->sks.'</td><td><input type="checkbox" name="cek" onChange="was()"/></td></tr>'; ?>
+                        <?php endwhile; ?>
+                    </table>
+                </div>
+                <?php } ?>
                 </div>
             </article>
         </div>
