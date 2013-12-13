@@ -216,6 +216,7 @@
         <td>Gedung</td>
         <td>Ruangan</td>
         <td>Lantai</td>
+        <td>Edit</td>
     </tr>
     <?php 
         $query = mysql_query("SELECT * FROM jadwal");
@@ -238,9 +239,4 @@
         </tr>
         '; ?>
     <?php endwhile; ?>
-    <tr>
-        <td colspan="2">
-            <input type="button" value="back" onclick="back()"/>
-        </td>
-    </tr>
 </table>

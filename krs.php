@@ -102,6 +102,9 @@
                 $("#article-menu").load("cloud.php #PilihanInput");
             });
         }
+        function menujuKeFormJadwalEdit(x){
+            alert("Belum Siap");
+        }
 	</script>
 	<title>Home</title>
 </head>
