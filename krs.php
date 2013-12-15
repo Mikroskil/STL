@@ -112,6 +112,9 @@
                 $("#KontenUtamaEdit").html(data);
             });
         }
+        function menujuKeFormJadwalEditUpdate(x){
+            alert("Belum Siap");
+        }
 	</script>
 	<title>Home</title>
 </head>

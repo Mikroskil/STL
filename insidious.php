@@ -93,4 +93,123 @@
 		$pilSks = $_POST["pilSks"];
 		$q = mysql_query("UPDATE matakuliah SET kode='$kode', mtk='$matkul', semester='$pilSem', sks='$pilSks' WHERE id=$id");
 	}
+	else if($pin == "10"){
+		$id = $_POST["id"];
+		$q = mysql_fetch_object(mysql_query("SELECT * FROM jadwal WHERE id = $id"));
+	echo '<table>
+	<tr>
+        <td>Waktu</td>
+        <td>'.$q->waktu.'&nbsp;
+            <select id="waktuJ">
+                <option>Pagi</option>
+                <option>Sore</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+    	<td>Jurusan</td>
+        <td>'.$q->jurusan.'&nbsp;
+        	<select id="jurusanJ">
+				<option>TI</option>
+			</select>
+        </td>
+    </tr>
+    <tr>
+    	<td>Semester</td>
+        <td>'.$q->semester.'&nbsp;
+        	<select id="semesterJ">
+				<option>V</option>
+			</select>
+        </td>
+    </tr>
+    <tr>
+    	<td>Kelas</td>
+        <td>'.$q->kelas.'&nbsp;
+        	<select id="kelasJ">
+                <option>A</option>
+                <option>B</option>
+                <option>C</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td>Hari</td>
+        <td>'.$q->hari.'&nbsp;
+            <select id="hariJ">
+                <option>Senin</option>
+                <option>Selasa</option>
+                <option>Rabu</option>
+                <option>Kamis</option>
+                <option>Jumat</option>
+                <option>Sabtu</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+    	<td>Jam Mulai</td>
+        <td>'.$q->mulai.'&nbsp;
+        	<select id="mulaiJ">
+				<option>I</option>
+    			<option>II</option>
+    			<option>III</option>
+			</select>
+        </td>
+    </tr>
+    <tr>
+    	<td>Mata Kuliah</td>
+        <td>'.$q->matkul.'&nbsp;
+        	<select id="matkulJ">';
+            $query = mysql_query("SELECT * FROM matakuliah");
+            while($x = mysql_fetch_object($query)):
+                echo '<option>'.$x->mtk.'</option>';
+            endwhile;
+            echo '</select>
+        </td>
+    </tr>
+    <tr>
+    	<td>Nama Dosen</td>
+    	<td>'.$q->dosen.'&nbsp;
+        	<select id="dosenJ">';
+            $quer = mysql_query("SELECT * FROM dosen");
+            while($x = mysql_fetch_object($quer)):
+            
+                echo '<option>'.$x->nama.'</option>';
+            endwhile;
+            echo '</select>
+        </td>
+    </tr>
+    <tr>
+    	<td>Ruangan</td>
+    	<td>
+        	Gedung &nbsp;'.$q->gedung.'&nbsp;
+        	<select id="gedungJ">
+				<option>B</option>
+    			<option>C</option>
+			</select>
+        	T &nbsp;'.$q->ruangan.'&nbsp;
+        	<select id="ruanganJ">
+				<option>1</option>
+    			<option>2</option>
+    			<option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+			</select>
+            L &nbsp;'.$q->lantai.'&nbsp;
+        	<select id="lantaiJ">
+				<option>1</option>
+    			<option>2</option>
+    			<option>3</option>
+                <option>4</option>
+                <option>5</option>
+			</select>
+        </td>
+    </tr>
+    <tr>
+    	<td colspan="2">
+            <input type="button" value="Submit" onclick="menujuKeFormJadwalEditUpdate('.$q->id.')"/>
+        </td>
+    </tr>
+</table>';
+	}
 ?>
