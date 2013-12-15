@@ -103,7 +103,14 @@
             });
         }
         function menujuKeFormJadwalEdit(x){
-            alert("Belum Siap");
+            $.post("insidious.php",
+            {
+                pin: "10",
+                id: x
+            },
+            function(data,status){
+                $("#KontenUtamaEdit").html(data);
+            });
         }
 	</script>
 	<title>Home</title>
