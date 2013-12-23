@@ -158,7 +158,6 @@
         </ul>
         
         <div id="center">
-            <?php if($akses->level == "admin"){ ?>
             <article id="article-home">
                 <div id="article-menu">
                 </div>
@@ -166,26 +165,6 @@
                 <div id="KontenUtamaEdit">
                 </div>
                 </div>
-            
-            <?php }else{ ?>
-                <div id="mhs-home">
-                    <table>
-                        <tr>
-                            <td>Kode</td>
-                            <td>Matakuliah</td>
-                            <td>Semester</td>
-                            <td>Sks</td>
-                            <td>Pilih</td>
-                        </tr>
-                        <?php 
-                        $query = mysql_query("SELECT * FROM matakuliah");
-                        while($x = mysql_fetch_object($query)):
-                        ?>
-                            <?php echo '<tr><td>'.$x->kode.'</td><td>'.$x->mtk.'</td><td>'.$x->semester.'</td><td>'.$x->sks.'</td><td><input type="checkbox" name="cek" onChange="was()"/></td></tr>'; ?>
-                        <?php endwhile; ?>
-                    </table>
-                </div>
-            <?php } ?>
             </article>
         </div>
     <?php
