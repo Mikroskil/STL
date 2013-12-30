@@ -50,11 +50,12 @@
             </header>
             <div id="center">
                 <article>
-                    <h2>Isi KRS</h2>
+                    <br/><br/><br/><br/><br/><br/>
+                    <h3>Isi KRS</h3>
                     <p>Mengisi KRS sesuai dengan mata kuliah yang akan di ambil</p>
-                    <h2>Melihat Jadwal Kuliah</h2>
+                    <h3>Melihat Jadwal Kuliah</h3>
                     <p>Melihat jadwal kuliah sesuai dengan mata kuliah yang diambil</p>
-                    <h2>Mengelola Jadwal bagi admin</h2>
+                    <h3>Mengelola Jadwal bagi admin</h3>
                     <p>user interface yang mudah bagi admin untuk mengelola jadwal</p>
                 </article>
                 <section>
@@ -74,7 +75,7 @@
             <div id="push"></div>
         </div>
         <footer>
-            <h2><center>&copy; STL 2013 </center></h2>
+            <h2><center>Copyright &copy; STL 2013-2014 </center></h2>
         </footer>
     <?php } ?>
 </body>

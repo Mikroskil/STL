@@ -99,6 +99,7 @@
             },
             function(data,status){
                 $("#KontenUtamaEdit").load("cloud.php #sukses-edit");
+                location.reload();
             });
         }
         function menujuKeFormMatkulEdit(x){
@@ -123,6 +124,7 @@
             },
             function(data,status){
                 $("#KontenUtamaEdit").load("cloud.php #sukses-edit");
+                location.reload();
             });
         }
         function menujuKeFormJadwalEdit(x){
@@ -154,6 +156,7 @@
             },
             function(data,status){
                 $("#KontenUtamaEdit").load("cloud.php #sukses-edit");
+                location.reload();
             });
         }
 	</script>

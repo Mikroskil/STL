@@ -72,7 +72,6 @@
             },
             function(data,status){
             	$("#KontenUtamaEdit").load("cloud.php #sukses-delete");
-
             });
 
         }
@@ -351,7 +350,7 @@
 								}
 
 	
-								//Pencetakan hasil
+								//Penyimpanan hasil
 								for($i = 0 ; $i < 7 ; $i++){
 									$arr_tgl[$i] = $tgl;
 									$arr_bln[$i] = $bln;

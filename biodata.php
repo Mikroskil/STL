@@ -86,6 +86,7 @@
             },
             function(data,status){
                 $("#article-konten").load("cloud.php #sukses-input");
+                location.reload();
             });
         }
         function kirimDosen(){
@@ -97,6 +98,7 @@
             },
             function(data,status){
                 $("#article-konten").load("cloud.php #sukses-input");
+                location.reload();
             });
         }
         function kirimJadwal(){
@@ -117,6 +119,7 @@
             },
             function(data,status){
                 $("#article-konten").load("cloud.php #sukses-input");
+                location.reload();
             });
         }
         
