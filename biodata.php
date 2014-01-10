@@ -147,8 +147,21 @@
 
         <div id="center">
             <article id="article-home">
-                <div id="article-menu"></div>
-                <div id="article-konten"></div>
+                <?php if($akses->level == "admin"){ ?>
+                    <div id="article-menu">
+                    </div>
+                    <div id="article-konten">
+                    <div id="KontenUtamaEdit">
+                    </div>
+                    </div>             
+				<?php }else{ ?>
+                    <div id="article-menu-mhs">
+                    </div>
+                    <div id="article-konten-mhs">
+                    <div id="KontenUtamaEdit-mhs">
+                    </div>
+                    </div>
+                <?php } ?>
             </article>
         </div>
     <?php
