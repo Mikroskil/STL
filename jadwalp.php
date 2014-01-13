@@ -210,6 +210,41 @@
 										$tgl--;
 									}
 								}
+
+	
+								//Pencetakan hasil
+								for($i = 0 ; $i < 7 ; $i++){
+									echo $tgl . " ";
+									Bulan($bln);
+									echo " " . $thn . " | ";
+									if(($tgl == $tgl_l) && ($uji == 1)){
+										$tgl = 1;
+										if($bln == 12){
+											$bln = 1;
+											$thn++;
+										}
+										else{
+											$bln++;
+										}
+										$uji = 0;
+									}
+									else{
+										if(($tgl == $tgl_s) && ($uji != 1)){
+											$tgl = 1;
+											if($bln == 12){
+												$bln = 1;
+												$thn++;
+											}
+											else{
+												$bln++;
+											}
+										}
+										else{
+											$tgl++;
+										}
+									}
+								}
+
 							?>
                         </div>
                     <?php } ?>
