@@ -130,7 +130,48 @@
 						</div>
 					</div>
                     <?php }else{ ?>
-                        <div id="main-content2"></div>
+                        <div id="main-content2">
+                        	<?php
+								function Bulan($input){
+									if($input == 1){
+										echo "januari";
+									}
+									else if($input == 2){
+										echo "februari";
+									}
+									else if($input == 3){
+										echo "maret";
+									}
+									else if($input == 4){
+										echo "april";
+									}
+									else if($input == 5){
+										echo "mei";
+									}
+									else if($input == 6){
+										echo "juni";
+									}
+									else if($input == 7){
+										echo "juli";
+									}
+									else if($input == 8){
+										echo "agustus";
+									}
+									else if($input == 9){
+										echo "september";
+									}
+									else if($input == 10){
+										echo "oktober";
+									}
+									else if($input == 11){
+										echo "november";
+									}
+									else if($input == 12){
+										echo "desember";
+									}
+								}
+							?>
+                        </div>
                     <?php } ?>
             </article>
         </div>
