@@ -170,6 +170,18 @@
 										echo "desember";
 									}
 								}
+
+								/*
+								$tgl = date("j"); // tanggal hari ini
+								$bln = date("n"); // bulan ini
+								$thn = date("Y"); // tahun ini
+								$hari = date("w"); // hari (minggu = 0 , sabtu = 6)
+								$tgl_l = date("t",strtotime("-1 month")); // byk hari di bulan sebelumnya
+								*/
+
+								$hari = date("N");
+								$bantu_t = 0; // untuk pengurangan tanggal
+
 							?>
                         </div>
                     <?php } ?>
