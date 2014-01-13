@@ -182,6 +182,34 @@
 								$hari = date("N");
 								$bantu_t = 0; // untuk pengurangan tanggal
 
+								while($hari > 1){
+									$hari -= 1;
+									$bantu_t += 1;
+								}
+
+								$uji = 0;
+								$tgl = date("j");
+								$tgl_s = date("t");
+								$bln = date("n");
+								$thn = date("Y");
+								$tgl_l = date("t",strtotime("-1 month"));
+
+								for($i = 0 ; $i < $bantu_t ; $i++){
+									if($tgl == 1){
+										$uji = 1;
+										$tgl = $tgl_l;
+										if($bln == 1){
+											$bln = 12;
+											$thn--;
+										}
+										else{
+											$bln--;
+										}
+									}
+									else{
+										$tgl--;
+									}
+								}
 							?>
                         </div>
                     <?php } ?>
