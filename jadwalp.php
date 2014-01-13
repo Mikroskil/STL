@@ -246,6 +246,29 @@
 								}
 
 							?>
+							<table align="center" border="1">
+								<tr>
+									<td onClick="Letak(this.id)" id="11">&nbsp;</td>
+									<td onClick="Letak(this.id)" id="12">&nbsp;</td>
+									<td onClick="Letak(this.id)" id="13">&nbsp;</td>
+									<td onClick="Letak(this.id)" id="14">&nbsp;</td>
+									<td onClick="Letak(this.id)" id="15">&nbsp;</td>
+								</tr>
+								<tr>
+									<td onClick="Letak(this.id)" id="21">&nbsp;</td>
+									<td onClick="Letak(this.id)" id="22">&nbsp;</td>
+									<td onClick="Letak(this.id)" id="23">&nbsp;</td>
+									<td onClick="Letak(this.id)" id="24">&nbsp;</td>
+									<td onClick="Letak(this.id)" id="25">&nbsp;</td>
+								</tr>
+								<tr>
+									<td onClick="Letak(this.id)" id="31">&nbsp;</td>
+									<td onClick="Letak(this.id)" id="32">&nbsp;</td>
+									<td onClick="Letak(this.id)" id="33">&nbsp;</td>
+									<td onClick="Letak(this.id)" id="34">&nbsp;</td>
+									<td onClick="Letak(this.id)" id="35">&nbsp;</td>
+								</tr>
+							</table>
                         </div>
                     <?php } ?>
             </article>
