@@ -155,11 +155,33 @@
                     </div>
                     </div>             
 				<?php }else{ ?>
-                    <div id="article-menu-mhs">
-                    </div>
-                    <div id="article-konten-mhs">
-                    <div id="KontenUtamaEdit-mhs">
-                    </div>
+                    <div id="KontenBio">
+                        <table>
+                        <?php 
+                        $x = mysql_fetch_object(mysql_query("SELECT * FROM akun"));
+                        ?>
+                            <tr>
+                                <td>Level</td>
+                                <td><?php echo $x->level; ?></td>
+                            </tr>
+                            <tr>
+                                <td>Username</td>
+                                <td><?php echo $x->username; ?></td>
+                            </tr>
+                            <tr>
+                                <td>Jenis Kelamin</td>
+                                <td><?php echo $x->gender; ?></td>
+                            </tr>
+                            <tr>
+                                <td>Alamat</td>
+                                <td><?php echo $x->alamat; ?></td>
+                            </tr>
+                            <tr>
+                                <td>Nomor</td>
+                                <td><?php echo $x->nomor; ?></td>
+                            </tr>
+                        <?php ?>
+                        </table>
                     </div>
                 <?php } ?>
             </article>

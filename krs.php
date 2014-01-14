@@ -167,11 +167,26 @@
                     </div>
                     </div>             
 				<?php }else{ ?>
-                    <div id="article-menu-mhs">
-                    </div>
-                    <div id="article-konten-mhs">
-                    <div id="KontenUtamaEdit-mhs">
-                    </div>
+                    <div id="KontenKRS">
+                        <table>
+                        <tr>
+                            <td>Matakuliah</td>
+                            <td>Pilih</td>
+                        </tr>
+                        <?php 
+                        $query = mysql_query("SELECT * FROM matakuliah");
+                        while($x = mysql_fetch_object($query)):
+                        ?>
+                            <tr>
+                                <td><?php echo $x->mtk; ?></td>
+                                <td><input type="checkbox" name="cek"/></td>
+                            </tr>
+                        <?php endwhile; ?>
+                        <tr>
+                            <td></td>
+                            <td><input type="button" value="OK" onClick="isiKRS()"/></td>
+                        </tr>
+                        </table>
                     </div>
                 <?php } ?>
             </article>
