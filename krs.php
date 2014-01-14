@@ -171,7 +171,7 @@
                         <table>
                         <tr>
                             <td>Matakuliah</td>
-                            <td>Centang</td>
+                            <td>Pilih</td>
                         </tr>
                         <?php 
                         $query = mysql_query("SELECT * FROM matakuliah");
