@@ -246,48 +246,6 @@
 								}
 
 							?>
-							<table align="center" border="1">
-								<tr>
-									<td id="11">Senin</td>
-									<td id="12">Selasa</td>
-									<td id="13">Rabu</td>
-									<td id="14">Kamis</td>
-									<td id="15">Jumat</td>
-									<td id="15">Sabtu</td>
-								</tr>
-								<tr>
-									<td id="21">&nbsp;</td>
-									<td id="22">&nbsp;</td>
-									<td id="23">&nbsp;</td>
-									<td id="24">&nbsp;</td>
-									<td id="25">&nbsp;</td>
-									<td id="26">&nbsp;</td>
-								</tr>
-								<tr>
-									<td id="31">&nbsp;</td>
-									<td id="32">&nbsp;</td>
-									<td id="33">&nbsp;</td>
-									<td id="34">&nbsp;</td>
-									<td id="35">&nbsp;</td>
-									<td id="36">&nbsp;</td>
-								</tr>
-								<tr>
-									<td id="41">&nbsp;</td>
-									<td id="42">&nbsp;</td>
-									<td id="43">&nbsp;</td>
-									<td id="44">&nbsp;</td>
-									<td id="45">&nbsp;</td>
-									<td id="46">&nbsp;</td>
-								</tr>
-								<tr>
-									<td id="51">&nbsp;</td>
-									<td id="52">&nbsp;</td>
-									<td id="53">&nbsp;</td>
-									<td id="54">&nbsp;</td>
-									<td id="55">&nbsp;</td>
-									<td id="56">&nbsp;</td>
-								</tr>
-							</table>
                         </div>
                     <?php } ?>
             </article>
