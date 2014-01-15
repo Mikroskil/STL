@@ -244,6 +244,71 @@
 										}
 									}
 								}
+								echo '<table align="center" border="1">
+										<tr>
+											<td>&nbsp;</td>
+											<td>'.$arr_tgl[0].'<br/>'.Bulan($arr_bln[0]).'<br/>'.$arr_thn[0].'</td>
+											<td>'.$arr_tgl[1].'<br/>'.Bulan($arr_bln[1]).'<br/>'.$arr_thn[1].'</td>
+											<td>'.$arr_tgl[2].'<br/>'.Bulan($arr_bln[2]).'<br/>'.$arr_thn[2].'</td>
+											<td>'.$arr_tgl[3].'<br/>'.Bulan($arr_bln[3]).'<br/>'.$arr_thn[3].'</td>
+											<td>'.$arr_tgl[4].'<br/>'.Bulan($arr_bln[4]).'<br/>'.$arr_thn[4].'</td>
+											<td>'.$arr_tgl[5].'<br/>'.Bulan($arr_bln[5]).'<br/>'.$arr_thn[5].'</td>
+										</tr>
+										<tr>
+											<td>JAM</td>
+											<td>Senin</td>
+											<td>Selasa</td>
+											<td>Rabu</td>
+											<td>Kamis</td>
+											<td>Jumat</td>
+											<td>Sabtu</td>
+										</tr>
+										<tr>
+											<td>I</td>
+											<td>&nbsp;</td>
+											<td>&nbsp;</td>
+											<td>&nbsp;</td>
+											<td>&nbsp;</td>
+											<td>&nbsp;</td>
+											<td>&nbsp;</td>
+										</tr>
+										<tr>
+											<td>II</td>
+											<td>&nbsp;</td>
+											<td>&nbsp;</td>
+											<td>&nbsp;</td>
+											<td>&nbsp;</td>
+											<td>&nbsp;</td>
+											<td>&nbsp;</td>
+										</tr>
+										<tr>
+											<td>III</td>
+											<td>&nbsp;</td>
+											<td>&nbsp;</td>
+											<td>&nbsp;</td>
+											<td>&nbsp;</td>
+											<td>&nbsp;</td>
+											<td>&nbsp;</td>
+										</tr>
+										<tr>
+											<td>IV</td>
+											<td>&nbsp;</td>
+											<td>&nbsp;</td>
+											<td>&nbsp;</td>
+											<td>&nbsp;</td>
+											<td>&nbsp;</td>
+											<td>&nbsp;</td>
+										</tr>
+										<tr>
+											<td>V</td>
+											<td>&nbsp;</td>
+											<td>&nbsp;</td>
+											<td>&nbsp;</td>
+											<td>&nbsp;</td>
+											<td>&nbsp;</td>
+											<td>&nbsp;</td>
+										</tr>
+								 	  </table>';
 
 							?>
                         </div>
