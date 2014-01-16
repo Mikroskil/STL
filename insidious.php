@@ -69,6 +69,9 @@
         $id = $_POST["id"];
         $save = mysql_query("DELETE FROM jadwal WHERE id = '$id'");
     }
+    else if($pin == "15"){
+        
+    }
     else if($pin == "14"){
         $id = $_POST["id"];
         $waktu = $_POST["waktu"];

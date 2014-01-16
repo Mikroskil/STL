@@ -66,6 +66,27 @@
         function back(){
             $("#KontenUtamaEdit").load("cloud.php #PilihanInput");
         }
+        function isiKRS(){
+            var c=0;
+            var cekbox = document.getElementsByName("cek");
+            var kodematkul = document.getElementsByName("kodematkul");
+            var arr = "";
+            for(var i in cekbox){
+                if(cekbox[i].checked == true){
+                    c++;
+                    arr += kodematkul[i].innerHTML;
+                    arr += "|";
+                }
+            }
+            alert(arr);
+            /*$.post("insidious.php",
+            {
+                pin: "15"
+            },
+            function(data,status){
+                alert("sukses");
+            });*/
+        }
         function menujuKeFormDosenEditUpdate(x){
             $.post("insidious.php",
             {
@@ -188,6 +209,7 @@
                     <div id="KontenKRS">
                         <table>
                         <tr>
+                            <td>Kode Matakuliah</td>
                             <td>Matakuliah</td>
                             <td>Semester</td>
                             <td>Sks</td>
@@ -198,6 +220,7 @@
                         while($x = mysql_fetch_object($query)):
                         ?>
                             <tr>
+                                <td name="kodematkul"><?php echo $x->kode; ?></td>
                                 <td><?php echo $x->mtk; ?></td>
                                 <td><?php echo $x->semester; ?></td>
                                 <td><?php echo $x->sks; ?></td>
@@ -205,6 +228,7 @@
                             </tr>
                         <?php endwhile; ?>
                         <tr>
+                            <td></td>
                             <td></td>
                             <td></td>
                             <td></td>
