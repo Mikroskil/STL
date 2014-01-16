@@ -67,7 +67,7 @@
 	</script>
 	<title>Home</title>
 </head>
-<body>
+<body onload="Cetak()">
 	<?php if(isset($akses)){ ?>
         <header>
             <nav>
@@ -140,40 +140,40 @@
                         	<?php
 								function Bulan($input){
 									if($input == 1){
-										echo "januari";
+										return "januari";
 									}
 									else if($input == 2){
-										echo "februari";
+										return "februari";
 									}
 									else if($input == 3){
-										echo "maret";
+										return "maret";
 									}
 									else if($input == 4){
-										echo "april";
+										return "april";
 									}
 									else if($input == 5){
-										echo "mei";
+										return "mei";
 									}
 									else if($input == 6){
-										echo "juni";
+										return "juni";
 									}
 									else if($input == 7){
-										echo "juli";
+										return "juli";
 									}
 									else if($input == 8){
-										echo "agustus";
+										return "agustus";
 									}
 									else if($input == 9){
-										echo "september";
+										return "september";
 									}
 									else if($input == 10){
-										echo "oktober";
+										return "oktober";
 									}
 									else if($input == 11){
-										echo "november";
+										return "november";
 									}
 									else if($input == 12){
-										echo "desember";
+										return "desember";
 									}
 								}
 
@@ -223,9 +223,9 @@
 	
 								//Pencetakan hasil
 								for($i = 0 ; $i < 7 ; $i++){
-									echo $tgl . " ";
-									Bulan($bln);
-									echo " " . $thn . " | ";
+									$arr_tgl[$i] = $tgl;
+									$arr_bln[$i] = $bln;
+									$arr_thn[$i] = $thn;
 									if(($tgl == $tgl_l) && ($uji == 1)){
 										$tgl = 1;
 										if($bln == 12){
