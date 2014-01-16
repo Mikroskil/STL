@@ -31,15 +31,8 @@
 				  $('.'+type).animate({top:"0"}, 500);
 			});
 		}
-
-        function Cetak(){
-        	for(var i=1; i<7; i++){
-        		$('#'+2+i).html("AAA");
-        	}
-        }
 		
 		$(document).ready(function(){
-				$("#article-menu").load("cloud.php #PilihanDelete");
 				 hilang();
 				 for(var i=0;i<pesan_array.length;i++)
 				 {
@@ -53,64 +46,22 @@
 		});       
 	</script>
 	<script type="text/javascript">
-		function menujuKe(a){
-            if(a == "Mata Kuliah")
-                $("#KontenUtamaEdit").load("cloud.php #FormDeleteMatkul");
-            else if(a == "Dosen")
-                $("#KontenUtamaEdit").load("cloud.php #FormDeleteDosen");
-            else if(a == "Jadwal Kuliah")
-                $("#KontenUtamaEdit").load("cloud.php #FormDeleteJadwal");
-        }
-
 		function deleteMatkul(x){
             $.post("insidious.php",
             {
                 pin: "5",
                 id: x
+                
             },
             function(data,status){
-            	$("#KontenUtamaEdit").load("cloud.php #sukses-delete");
+            	$("#main-content").load("cloud.php #sukses-delete");
             });
         }
-		function deleteDosen(x){
-            $.post("insidious.php",
-            {
-                pin: "12",
-                id: x
-            },
-            function(data,status){
-            	$("#KontenUtamaEdit").load("cloud.php #sukses-delete");
-            });
-        }
-        function deleteJadwal(x){
-            $.post("insidious.php",
-            {
-                pin: "13",
-                id: x
-            },
-            function(data,status){
-            	$("#KontenUtamaEdit").load("cloud.php #sukses-delete");
-            });
-        }
-        function confirmDeleteJadwal(x){
-        	var asd=confirm("Anda yakin menghapus record ini secara permanent ?");
-			if(asd==true)
-				deleteJadwal(x);
-        }
-        function confirmDeleteDosen(x){
-        	var asd=confirm("Anda yakin menghapus record ini secara permanent ?");
-			if(asd==true)
-				deleteDosen(x);
-        }
-        function confirmDeleteMatkul(x){
-        	var asd=confirm("Anda yakin menghapus record ini secara permanent ?");
-			if(asd==true)
-				deleteMatkul(x);
-        }
+	
 	</script>
 	<title>Home</title>
 </head>
-<body onload="Cetak()">
+<body>
 	<?php if(isset($akses)){ ?>
         <header>
             <nav>
@@ -153,12 +104,31 @@
             <article id="article-home">
                 <?php if($akses->level == "admin"){ ?>
                 		<div id="article-menu">
-                    </div>
-                    <div id="article-konten">
-                    <div id="KontenUtamaEdit">
-                    </div>
-                    </div> 
-					
+                </div>
+                <div id="article-konten">
+                        <div id="main-content">
+							<table id="table_data">
+							<tr><td>Kode</td>
+								<td>Matakuliah</td>
+								<td>Semester</td>
+								<td>Sks</td>
+								<td>Delete</td>
+							</tr>
+								<?php 
+								$query = mysql_query("SELECT * FROM matakuliah");
+								while($x = mysql_fetch_object($query)):
+								?>
+									<?php echo "<tr>
+													<td id='id_matkul'>$x->kode</td>
+													<td>$x->mtk</td>
+													<td>$x->semester</td>
+													<td>$x->sks</td>
+													<td><input type='button' onclick = 'deleteMatkul(".$x->id.")'/></td>
+												</tr>"; ?>
+								<?php endwhile; ?>
+							</table>
+						</div>
+					</div>
                     <?php }else{ ?>
                         <div id="main-content2">
                         	<?php
@@ -200,6 +170,70 @@
 										return "desember";
 									}
 								}
+
+								function Hari($input){
+									if($input == 'Senin'){
+										return 0;
+									}
+									else if($input == 'Selasa'){
+										return 1;
+									}
+									else if($input == 'Rabu'){
+										return 2;
+									}
+									else if($input == 'Kamis'){
+										return 3;
+									}
+									else if($input == 'Jumat'){
+										return 4;
+									}
+									else if($input == 'Sabtu'){
+										return 5;
+									}
+								}
+
+								function Mulai($input){
+									if($input == 'I'){
+										return 0;
+									}
+									else if($input == 'II'){
+										return 1;
+									}
+									else if($input == 'III'){
+										return 2;
+									}
+									else if($input == 'IV'){
+										return 3;
+									}
+									else if($input == 'V'){
+										return 4;
+									}
+								}
+
+								$a_kode = mysql_query("SELECT * FROM krs WHERE nim = '111110246'"); // ambil kode yg sudah di cek list di krs
+								$b = 0; // untuk menghitung byk cek list oleh mahasiswa ini
+								$arr_kode; // untuk menyimpan semua kode yang ada
+								$arr_test;
+
+								while($x = mysql_fetch_object($a_kode)):
+					                $arr_kode[$b] = $x->kode;
+					            	$b++;
+					            endwhile;
+
+					        	//untuk isi array
+					        	for($i = 0 ; $i < 10 ; $i++){
+					        		for($j = 0 ; $j < 10 ; $j++){
+					        			$arr_hasil[$i][$j] = '&nbsp;';
+					        		}
+					        	}
+
+					        	for($i = 0 ; $i < $b ; $i++){
+					        		$c = mysql_fetch_object(mysql_query("SELECT hari , mulai , sks , matkul FROM jadwal WHERE kode = '".$arr_kode[$i]."'"));
+					        		for($j = 0 ; $j < $c->sks ; $j++){
+					        			$bantu = Mulai($c->mulai)+$j;
+					        			$arr_hasil[Hari($c->hari)][$bantu] = $c->matkul;
+					        		}
+					        	}
 
 								/*
 								$tgl = date("j"); // tanggal hari ini
@@ -298,48 +332,48 @@
 										</tr>
 										<tr>
 											<td>I</td>
-											<td>&nbsp;</td>
-											<td>&nbsp;</td>
-											<td>&nbsp;</td>
-											<td>&nbsp;</td>
-											<td>&nbsp;</td>
-											<td>&nbsp;</td>
+											<td>'.$arr_hasil[0][0].'</td>
+											<td>'.$arr_hasil[1][0].'</td>
+											<td>'.$arr_hasil[2][0].'</td>
+											<td>'.$arr_hasil[3][0].'</td>
+											<td>'.$arr_hasil[4][0].'</td>
+											<td>'.$arr_hasil[5][0].'</td>
 										</tr>
 										<tr>
 											<td>II</td>
-											<td>&nbsp;</td>
-											<td>&nbsp;</td>
-											<td>&nbsp;</td>
-											<td>&nbsp;</td>
-											<td>&nbsp;</td>
-											<td>&nbsp;</td>
+											<td>'.$arr_hasil[0][1].'</td>
+											<td>'.$arr_hasil[1][1].'</td>
+											<td>'.$arr_hasil[2][1].'</td>
+											<td>'.$arr_hasil[3][1].'</td>
+											<td>'.$arr_hasil[4][1].'</td>
+											<td>'.$arr_hasil[5][1].'</td>
 										</tr>
 										<tr>
 											<td>III</td>
-											<td>&nbsp;</td>
-											<td>&nbsp;</td>
-											<td>&nbsp;</td>
-											<td>&nbsp;</td>
-											<td>&nbsp;</td>
-											<td>&nbsp;</td>
+											<td>'.$arr_hasil[0][2].'</td>
+											<td>'.$arr_hasil[1][2].'</td>
+											<td>'.$arr_hasil[2][2].'</td>
+											<td>'.$arr_hasil[3][2].'</td>
+											<td>'.$arr_hasil[4][2].'</td>
+											<td>'.$arr_hasil[5][2].'</td>
 										</tr>
 										<tr>
 											<td>IV</td>
-											<td>&nbsp;</td>
-											<td>&nbsp;</td>
-											<td>&nbsp;</td>
-											<td>&nbsp;</td>
-											<td>&nbsp;</td>
-											<td>&nbsp;</td>
+											<td>'.$arr_hasil[0][3].'</td>
+											<td>'.$arr_hasil[1][3].'</td>
+											<td>'.$arr_hasil[2][3].'</td>
+											<td>'.$arr_hasil[3][3].'</td>
+											<td>'.$arr_hasil[4][3].'</td>
+											<td>'.$arr_hasil[5][3].'</td>
 										</tr>
 										<tr>
 											<td>V</td>
-											<td>&nbsp;</td>
-											<td>&nbsp;</td>
-											<td>&nbsp;</td>
-											<td>&nbsp;</td>
-											<td>&nbsp;</td>
-											<td>&nbsp;</td>
+											<td>'.$arr_hasil[0][4].'</td>
+											<td>'.$arr_hasil[1][4].'</td>
+											<td>'.$arr_hasil[2][4].'</td>
+											<td>'.$arr_hasil[3][4].'</td>
+											<td>'.$arr_hasil[4][4].'</td>
+											<td>'.$arr_hasil[5][4].'</td>
 										</tr>
 								 	  </table>';
 
