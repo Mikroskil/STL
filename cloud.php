@@ -313,7 +313,7 @@
                                 <td>$x->mtk</td>
                                 <td>$x->semester</td>
                                 <td>$x->sks</td>
-                                <td><input type='button' onclick = 'deleteMatkul(".$x->id.")'/></td>
+                                <td><input type='button' onclick = 'confirmDeleteMatkul(".$x->id.")'/></td>
                             </tr>"; ?>
         <?php endwhile; ?>
     </table>
@@ -332,7 +332,7 @@
         <?php echo "<tr>
                         <td>$x->nip</td>
                         <td>$x->nama</td>
-                        <td><input type='button' onclick = 'deleteDosen(".$x->id.")'/></td>
+                        <td><input type='button' onclick = 'confirmDeleteDosen(".$x->id.")'/></td>
                     </tr>";
         ?>
         <?php endwhile; ?>
@@ -370,7 +370,7 @@
                         <td>$x->gedung</td>
                         <td>$x->ruangan</td>
                         <td>$x->lantai</td>
-                        <td><input type='button' onclick = 'deleteJadwal(".$x->id.")'/></td>
+                        <td><input type='button' onclick = 'confirmDeleteJadwal(".$x->id.")'/></td>
                     </tr>";
         ?>
         <?php endwhile; ?>

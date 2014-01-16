@@ -61,6 +61,7 @@
             else if(a == "Jadwal Kuliah")
                 $("#KontenUtamaEdit").load("cloud.php #FormDeleteJadwal");
         }
+
 		function deleteMatkul(x){
             $.post("insidious.php",
             {
@@ -90,6 +91,21 @@
             function(data,status){
             	$("#KontenUtamaEdit").load("cloud.php #sukses-delete");
             });
+        }
+        function confirmDeleteJadwal(x){
+        	var asd=confirm("Anda yakin menghapus record ini secara permanent ?");
+			if(asd==true)
+				deleteJadwal(x);
+        }
+        function confirmDeleteDosen(x){
+        	var asd=confirm("Anda yakin menghapus record ini secara permanent ?");
+			if(asd==true)
+				deleteDosen(x);
+        }
+        function confirmDeleteMatkul(x){
+        	var asd=confirm("Anda yakin menghapus record ini secara permanent ?");
+			if(asd==true)
+				deleteMatkul(x);
         }
 	</script>
 	<title>Home</title>
