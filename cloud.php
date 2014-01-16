@@ -13,7 +13,7 @@
     <ul>
         <li><div class="metro" onClick="menujuKe('Mata Kuliah')">Mata Kuliah</div></li>
         <li><div class="metro" onClick="menujuKe('Dosen')">Dosen</div></li>
-        <li><div class="metro"onClick="menujuKe('Jadwal Kuliah')">Jadwal Kuliah</div></li>
+        <li><div class="metro" onClick="menujuKe('Jadwal Kuliah')">Jadwal Kuliah</div></li>
     </ul>
 </div>
 
@@ -21,7 +21,15 @@
     <ul>
         <li><div class="metro" onClick="menujuKe('Mata Kuliah')">Mata Kuliah</div></li>
         <li><div class="metro" onClick="menujuKe('Dosen')">Dosen</div></li>
-        <li><div class="metro"onClick="menujuKe('Jadwal Kuliah')">Jadwal Kuliah</div></li>
+        <li><div class="metro" onClick="menujuKe('Jadwal Kuliah')">Jadwal Kuliah</div></li>
+    </ul>
+</div>
+
+<div id="PilihanDelete">
+    <ul>
+        <li><div class="metro" onClick="menujuKe('Mata Kuliah')">Mata Kuliah</div></li>
+        <li><div class="metro" onClick="menujuKe('Dosen')">Dosen</div></li>
+        <li><div class="metro" onClick="menujuKe('Jadwal Kuliah')">Jadwal Kuliah</div></li>
     </ul>
 </div>
 
@@ -286,4 +294,85 @@
         </tr>
     </table>
     <input type="button" value="Simpan" onclick="EditBioUpdate(<?php echo $akses->id; ?>)" />
+</div>
+
+<div id="FormDeleteMatkul">
+    <table id="table_data">
+        <tr><td>Kode</td>
+            <td>Matakuliah</td>
+            <td>Semester</td>
+            <td>Sks</td>
+            <td>Delete</td>
+        </tr>
+            <?php 
+            $query = mysql_query("SELECT * FROM matakuliah");
+            while($x = mysql_fetch_object($query)):
+            ?>
+                <?php echo "<tr>
+                                <td id='id_matkul'>$x->kode</td>
+                                <td>$x->mtk</td>
+                                <td>$x->semester</td>
+                                <td>$x->sks</td>
+                                <td><input type='button' onclick = 'deleteMatkul(".$x->id.")'/></td>
+                            </tr>"; ?>
+        <?php endwhile; ?>
+    </table>
+</div>
+<div id="FormDeleteDosen">
+    <table>
+        <tr>
+            <td>Nip</td>
+            <td>Nama</td>
+            <td>Delete</td>
+        </tr>
+        <?php 
+            $query = mysql_query("SELECT * FROM dosen");
+            while($x = mysql_fetch_object($query)):
+        ?>
+        <?php echo "<tr>
+                        <td>$x->nip</td>
+                        <td>$x->nama</td>
+                        <td><input type='button' onclick = 'deleteDosen(".$x->id.")'/></td>
+                    </tr>";
+        ?>
+        <?php endwhile; ?>
+    </table>
+</div>
+<div id="FormDeleteJadwal">
+    <table>
+        <tr>
+            <td>Waktu</td>
+            <td>Jurusan</td>
+            <td>Semester</td>
+            <td>Kelas</td>
+            <td>Hari</td>
+            <td>Jam Mulai</td>
+            <td>Matakuliah</td>
+            <td>Dosen</td>
+            <td>Gedung</td>
+            <td>Ruangan</td>
+            <td>Lantai</td>
+            <td>Delete</td>
+        </tr>
+        <?php 
+            $query = mysql_query("SELECT * FROM jadwal");
+            while($x = mysql_fetch_object($query)):
+        ?>
+        <?php echo "<tr>
+                        <td>$x->waktu</td>
+                        <td>$x->jurusan</td>
+                        <td>$x->semester</td>
+                        <td>$x->kelas</td>
+                        <td>$x->hari</td>
+                        <td>$x->mulai</td>
+                        <td>$x->matkul</td>
+                        <td>$x->dosen</td>
+                        <td>$x->gedung</td>
+                        <td>$x->ruangan</td>
+                        <td>$x->lantai</td>
+                        <td><input type='button' onclick = 'deleteJadwal(".$x->id.")'/></td>
+                    </tr>";
+        ?>
+        <?php endwhile; ?>
+    </table>
 </div>

@@ -39,6 +39,7 @@
         }
 		
 		$(document).ready(function(){
+				$("#article-menu").load("cloud.php #PilihanDelete");
 				 hilang();
 				 for(var i=0;i<pesan_array.length;i++)
 				 {
@@ -52,6 +53,14 @@
 		});       
 	</script>
 	<script type="text/javascript">
+		function menujuKe(a){
+            if(a == "Mata Kuliah")
+                $("#KontenUtamaEdit").load("cloud.php #FormDeleteMatkul");
+            else if(a == "Dosen")
+                $("#KontenUtamaEdit").load("cloud.php #FormDeleteDosen");
+            else if(a == "Jadwal Kuliah")
+                $("#KontenUtamaEdit").load("cloud.php #FormDeleteJadwal");
+        }
 		function deleteMatkul(x){
             $.post("insidious.php",
             {
@@ -60,7 +69,7 @@
                 
             },
             function(data,status){
-            	$("#main-content").load("cloud.php #sukses-delete");
+            	$("#KontenUtamaEdit").load("cloud.php #sukses-delete");
             });
         }
 	
@@ -110,31 +119,12 @@
             <article id="article-home">
                 <?php if($akses->level == "admin"){ ?>
                 		<div id="article-menu">
-                </div>
-                <div id="article-konten">
-                        <div id="main-content">
-							<table id="table_data">
-							<tr><td>Kode</td>
-								<td>Matakuliah</td>
-								<td>Semester</td>
-								<td>Sks</td>
-								<td>Delete</td>
-							</tr>
-								<?php 
-								$query = mysql_query("SELECT * FROM matakuliah");
-								while($x = mysql_fetch_object($query)):
-								?>
-									<?php echo "<tr>
-													<td id='id_matkul'>$x->kode</td>
-													<td>$x->mtk</td>
-													<td>$x->semester</td>
-													<td>$x->sks</td>
-													<td><input type='button' onclick = 'deleteMatkul(".$x->id.")'/></td>
-												</tr>"; ?>
-								<?php endwhile; ?>
-							</table>
-						</div>
-					</div>
+                    </div>
+                    <div id="article-konten">
+                    <div id="KontenUtamaEdit">
+                    </div>
+                    </div> 
+					
                     <?php }else{ ?>
                         <div id="main-content2">
                         	<?php
