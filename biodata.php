@@ -80,6 +80,7 @@
                 pin: "2",
                 kode: $("#kode-matkul").val(),
                 matkul: $("#matkul").val(),
+                //pilSem: pilSemester.options[pilSemester.selectedIndex].text,
                 pilSem: pilSemester.options[pilSemester.selectedIndex].text,
                 pilSks: pilSks.options[pilSks.selectedIndex].text
             },
@@ -140,7 +141,7 @@
                     <?php } ?>
                 </ul>
                 <ul id="logout-box">
-                    <li><a href="home.php" id="username-box"><?php echo $akses->username; ?></a></li>
+                    <li><a id="username-box"><?php echo $akses->username; ?></a></li>
                     <li><a href="logout.php">Logout</a></li>
                 </ul>
             </nav>
