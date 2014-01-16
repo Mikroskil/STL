@@ -193,6 +193,9 @@
 									$bantu_t += 1;
 								}
 
+								$arr_tgl;
+								$arr_bln;
+								$arr_thn;
 								$uji = 0;
 								$tgl = date("j");
 								$tgl_s = date("t");
