@@ -58,6 +58,22 @@
         function back(){
             $("#article-menu").load("cloud.php #PilihanInput");
         }
+        function EditBio(){
+            $("#KontenBio").load("cloud.php #FormEditBio");
+        }
+        function EditBioUpdate(y){
+            $.post("insidious.php",
+            {
+                pin: "11",
+                id: y,
+                gender: $("#gender").val(),
+                alamat: $("#alamat").val(),
+                nomor: $("#nomor").val()
+            },
+            function(data,status){
+                $("#KontenBio").load("cloud.php #sukses-edit");
+            });
+        }
         function kirimMatkul(){
             $.post("insidious.php",
             {
@@ -158,30 +174,30 @@
                     <div id="KontenBio">
                         <table>
                         <?php 
-                        $x = mysql_fetch_object(mysql_query("SELECT * FROM akun"));
+                        //$x = mysql_fetch_object(mysql_query("SELECT * FROM akun"));
                         ?>
                             <tr>
                                 <td>Level</td>
-                                <td><?php echo $x->level; ?></td>
+                                <td><?php echo $akses->level; ?></td>
                             </tr>
                             <tr>
                                 <td>Username</td>
-                                <td><?php echo $x->username; ?></td>
+                                <td><?php echo $akses->username; ?></td>
                             </tr>
                             <tr>
                                 <td>Jenis Kelamin</td>
-                                <td><?php echo $x->gender; ?></td>
+                                <td><?php echo $akses->gender; ?></td>
                             </tr>
                             <tr>
                                 <td>Alamat</td>
-                                <td><?php echo $x->alamat; ?></td>
+                                <td><?php echo $akses->alamat; ?></td>
                             </tr>
                             <tr>
                                 <td>Nomor</td>
-                                <td><?php echo $x->nomor; ?></td>
+                                <td><?php echo $akses->nomor; ?></td>
                             </tr>
-                        <?php ?>
                         </table>
+                        <input type="button" value="Edit" onclick="EditBio()" />
                     </div>
                 <?php } ?>
             </article>

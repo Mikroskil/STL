@@ -257,3 +257,33 @@
         <td>Data berhasil dihapus</td>
     </tr>
 </table>
+
+<div id="FormEditBio">
+    <table>
+    <?php 
+    //$x = mysql_fetch_object(mysql_query("SELECT * FROM akun"));
+    $akses = mysql_fetch_object(mysql_query("SELECT * FROM akun WHERE id = " . $_SESSION['uid']));
+    ?>
+        <tr>
+            <td>Level</td>
+            <td><?php echo $akses->level; ?></td>
+        </tr>
+        <tr>
+            <td>Username</td>
+            <td><?php echo $akses->username; ?></td>
+        </tr>
+        <tr>
+            <td>Jenis Kelamin</td>
+            <td><input type="text" id ="gender" value="<?php echo $akses->gender; ?>"/></td>
+        </tr>
+        <tr>
+            <td>Alamat</td>
+            <td><input type="text" id ="alamat" value="<?php echo $akses->alamat; ?>"/></td>
+        </tr>
+        <tr>
+            <td>Nomor</td>
+            <td><input type="text" id ="nomor" value="<?php echo $akses->nomor; ?>"/></td>
+        </tr>
+    </table>
+    <input type="button" value="Simpan" onclick="EditBioUpdate(<?php echo $akses->id; ?>)" />
+</div>

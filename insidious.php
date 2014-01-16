@@ -93,6 +93,13 @@
 		$pilSks = $_POST["pilSks"];
 		$q = mysql_query("UPDATE matakuliah SET kode='$kode', mtk='$matkul', semester='$pilSem', sks='$pilSks' WHERE id=$id");
 	}
+    else if($pin == "11"){
+        $id = $_POST["id"];
+        $gender = $_POST["gender"];
+        $alamat = $_POST["alamat"];
+        $nomor = $_POST["nomor"];
+        $q = mysql_query("UPDATE akun SET gender='$gender', alamat='$alamat', nomor='$nomor' WHERE id=$id");
+    }
 	else if($pin == "10"){
 		$id = $_POST["id"];
 		$q = mysql_fetch_object(mysql_query("SELECT * FROM jadwal WHERE id = $id"));
