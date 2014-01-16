@@ -1,2 +1,0 @@
-di jadwalp.php, ganti ke nim yang lagi login
-di database jadwal tambah sks
