@@ -70,7 +70,15 @@
         $save = mysql_query("DELETE FROM jadwal WHERE id = '$id'");
     }
     else if($pin == "15"){
-        
+        $nim = $_POST["nim"];
+        $arr = $_POST["arr"];
+        $arrs = split("[|]+", $arr);
+
+        mysql_query("DELETE FROM krs WHERE nim = '$nim'");
+    
+        for($i=0; $i<sizeof($arrs)-1; $i++){
+            $login = mysql_query("INSERT INTO krs (nim, kode) VALUES('$nim', '$arrs[$i]')");
+        }
     }
     else if($pin == "14"){
         $id = $_POST["id"];

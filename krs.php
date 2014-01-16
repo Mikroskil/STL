@@ -78,14 +78,16 @@
                     arr += "|";
                 }
             }
-            alert(arr);
-            /*$.post("insidious.php",
+            
+            $.post("insidious.php",
             {
-                pin: "15"
+                pin: "15",
+                arr: arr,
+                nim: $("#username-box").html()
             },
             function(data,status){
-                alert("sukses");
-            });*/
+                $("#KontenKRS").load("cloud.php #sukses-input");
+            });
         }
         function menujuKeFormDosenEditUpdate(x){
             $.post("insidious.php",
