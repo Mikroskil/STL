@@ -210,7 +210,7 @@
 									}
 								}
 
-								$a_kode = mysql_query("SELECT * FROM krs WHERE nim = '111110246'"); // ambil kode yg sudah di cek list di krs
+								$a_kode = mysql_query("SELECT * FROM krs WHERE nim = '$akses->username'"); // ambil kode yg sudah di cek list di krs
 								$b = 0; // untuk menghitung byk cek list oleh mahasiswa ini
 								$arr_kode; // untuk menyimpan semua kode yang ada
 								$arr_test;
