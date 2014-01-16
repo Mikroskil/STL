@@ -282,7 +282,12 @@
         </tr>
         <tr>
             <td>Jenis Kelamin</td>
-            <td><input type="text" id ="gender" value="<?php echo $akses->gender; ?>"/></td>
+            <td><?php echo $akses->gender; ?>
+                <select id="gender">
+                    <option>Laki-Laki</option>
+                    <option>Perempuan</option>
+            </select>
+            </td>
         </tr>
         <tr>
             <td>Alamat</td>

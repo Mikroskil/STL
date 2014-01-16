@@ -189,6 +189,8 @@
                         <table>
                         <tr>
                             <td>Matakuliah</td>
+                            <td>Semester</td>
+                            <td>Sks</td>
                             <td>Pilih Matakuliah</td>
                         </tr>
                         <?php 
@@ -197,10 +199,14 @@
                         ?>
                             <tr>
                                 <td><?php echo $x->mtk; ?></td>
+                                <td><?php echo $x->semester; ?></td>
+                                <td><?php echo $x->sks; ?></td>
                                 <td><input type="checkbox" name="cek"/></td>
                             </tr>
                         <?php endwhile; ?>
                         <tr>
+                            <td></td>
+                            <td></td>
                             <td></td>
                             <td><input type="button" value="OK" onClick="isiKRS()"/></td>
                         </tr>
