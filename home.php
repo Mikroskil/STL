@@ -12,7 +12,9 @@
     <link rel="stylesheet/less" type="text/css" href="styles.less"/>
 	<script src="less-1.5.0.min.js" type="text/javascript"></script>
 	<script src="jquery-1.10.2.js" type="text/javascript"></script>
-    
+    <script type="text/javascript">
+
+    </script>
 	<title>Home</title>
 </head>
 <body>
@@ -33,7 +35,7 @@
                     <?php } ?>
                 </ul>
                 <ul id="logout-box">
-                    <li><a href="home.php" id="username-box"><?php echo $akses->username; ?></a></li>
+                    <li><a id="username-box"><?php echo $akses->username; ?></a></li>
                     <li><a href="logout.php">Logout</a></li>
                 </ul>
             </nav>
