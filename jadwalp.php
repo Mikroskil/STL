@@ -31,6 +31,12 @@
 				  $('.'+type).animate({top:"0"}, 500);
 			});
 		}
+
+        function Cetak(){
+        	for(var i=1; i<7; i++){
+        		$('#'+2+i).html("AAA");
+        	}
+        }
 		
 		$(document).ready(function(){
 				 hilang();
@@ -187,6 +193,9 @@
 									$bantu_t += 1;
 								}
 
+								$arr_tgl;
+								$arr_bln;
+								$arr_thn;
 								$uji = 0;
 								$tgl = date("j");
 								$tgl_s = date("t");
