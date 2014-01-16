@@ -66,13 +66,31 @@
             {
                 pin: "5",
                 id: x
-                
             },
             function(data,status){
             	$("#KontenUtamaEdit").load("cloud.php #sukses-delete");
             });
         }
-	
+		function deleteDosen(x){
+            $.post("insidious.php",
+            {
+                pin: "12",
+                id: x
+            },
+            function(data,status){
+            	$("#KontenUtamaEdit").load("cloud.php #sukses-delete");
+            });
+        }
+        function deleteJadwal(x){
+            $.post("insidious.php",
+            {
+                pin: "13",
+                id: x
+            },
+            function(data,status){
+            	$("#KontenUtamaEdit").load("cloud.php #sukses-delete");
+            });
+        }
 	</script>
 	<title>Home</title>
 </head>

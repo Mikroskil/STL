@@ -61,6 +61,14 @@
 		$id = $_POST["id"];
 		$save = mysql_query("DELETE FROM matakuliah WHERE id = '$id'");
 	}
+    else if($pin == "12"){
+        $id = $_POST["id"];
+        $save = mysql_query("DELETE FROM dosen WHERE id = '$id'");
+    }
+    else if($pin == "13"){
+        $id = $_POST["id"];
+        $save = mysql_query("DELETE FROM jadwal WHERE id = '$id'");
+    }
 	else if($pin == "6"){
 		$nip = $_POST["nip"];
 		$q = mysql_fetch_object(mysql_query("SELECT * FROM dosen WHERE nip = '$nip'"));
