@@ -113,7 +113,25 @@
             });
         }
         function menujuKeFormJadwalEditUpdate(x){
-            alert("Belum Siap");
+            $.post("insidious.php",
+            {
+                pin: "14",
+                id: x,
+                waktu: waktuJ.options[waktuJ.selectedIndex].text,
+                jurusan: jurusanJ.options[jurusanJ.selectedIndex].text,
+                semester: semesterJ.options[semesterJ.selectedIndex].text,
+                kelas: kelasJ.options[kelasJ.selectedIndex].text,
+                hari: hariJ.options[hariJ.selectedIndex].text,
+                mulai: mulaiJ.options[mulaiJ.selectedIndex].text,
+                matkul: matkulJ.options[matkulJ.selectedIndex].text,
+                dosen: dosenJ.options[dosenJ.selectedIndex].text,
+                gedung: gedungJ.options[gedungJ.selectedIndex].text,
+                ruangan: ruanganJ.options[ruanganJ.selectedIndex].text,
+                lantai: lantaiJ.options[lantaiJ.selectedIndex].text
+            },
+            function(data,status){
+                $("#KontenUtamaEdit").load("cloud.php #sukses-edit");
+            });
         }
 	</script>
 	<title>Home</title>

@@ -69,6 +69,29 @@
         $id = $_POST["id"];
         $save = mysql_query("DELETE FROM jadwal WHERE id = '$id'");
     }
+    else if($pin == "14"){
+        $id = $_POST["id"];
+        $waktu = $_POST["waktu"];
+        $jurusan = $_POST["jurusan"];
+        $semester = $_POST["semester"];
+        $kelas = $_POST["kelas"];
+        $hari = $_POST["hari"];
+        $mulai = $_POST["mulai"];
+        $matkul = $_POST["matkul"];
+        $dosen = $_POST["dosen"];
+        $gedung = $_POST["gedung"];
+        $ruangan = $_POST["ruangan"];
+        $lantai = $_POST["lantai"];
+
+        $q = mysql_fetch_object(mysql_query("SELECT * FROM matakuliah WHERE mtk = '$matkul'"));
+
+        $t = $q->sks;
+        $r = $q->kode;
+
+        //$input_jadwal = mysql_query("INSERT INTO jadwal (kode, sks, waktu, jurusan, semester, kelas, hari, mulai, matkul, dosen, gedung, ruangan, lantai) VALUES ('$r', '$t', '$waktu', '$jurusan', '$semester', '$kelas', '$hari', '$mulai', '$matkul', '$dosen', '$gedung', '$ruangan', '$lantai')");
+        
+        $x = mysql_query("UPDATE jadwal SET kode='$r', sks='$t', waktu='$waktu', jurusan='$jurusan', semester='$semester', kelas='$kelas', hari='$hari', mulai='$mulai', matkul='$matkul', dosen='$dosen', gedung='$gedung', ruangan='$ruangan', lantai='$lantai' WHERE id=$id");
+    }
 	else if($pin == "6"){
 		$nip = $_POST["nip"];
 		$q = mysql_fetch_object(mysql_query("SELECT * FROM dosen WHERE nip = '$nip'"));
