@@ -46,11 +46,16 @@
     else{ ?>
         <div id="wrapper">
             <header>
-                <h1>This is Header</h1>
+                <h1>WPK (Website Penjadwalan Kuliah)</h1>
             </header>
             <div id="center">
                 <article>
-                    <h2>This is Article</h2>
+                    <h2>Isi KRS</h2>
+                    <p>Mengisi KRS sesuai dengan mata kuliah yang akan di ambil</p>
+                    <h2>Melihat Jadwal Kuliah</h2>
+                    <p>Melihat jadwal kuliah sesuai dengan mata kuliah yang diambil</p>
+                    <h2>Mengelola Jadwal bagi admin</h2>
+                    <p>user interface yang mudah bagi admin untuk mengelola jadwal</p>
                 </article>
                 <section>
                     <br/><br/>
@@ -69,7 +74,7 @@
             <div id="push"></div>
         </div>
         <footer>
-            <h2>This is Footer</h2>
+            <h2><center>&copy; STL 2013 </center></h2>
         </footer>
     <?php } ?>
 </body>
