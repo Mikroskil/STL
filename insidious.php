@@ -49,7 +49,12 @@
 		$ruangan = $_POST["ruangan"];
 		$lantai = $_POST["lantai"];
 
-		$input_jadwal = mysql_query("INSERT INTO jadwal (waktu, jurusan, semester, kelas, hari, mulai, matkul, dosen, gedung, ruangan, lantai) VALUES ('$waktu', '$jurusan', '$semester', '$kelas', '$hari', '$mulai', '$matkul', '$dosen', '$gedung', '$ruangan', '$lantai')");
+        $q = mysql_fetch_object(mysql_query("SELECT * FROM matakuliah WHERE mtk = '$matkul'"));
+
+        $t = $q->sks;
+        $r = $q->kode;
+
+		$input_jadwal = mysql_query("INSERT INTO jadwal (kode, sks, waktu, jurusan, semester, kelas, hari, mulai, matkul, dosen, gedung, ruangan, lantai) VALUES ('$r', '$t', '$waktu', '$jurusan', '$semester', '$kelas', '$hari', '$mulai', '$matkul', '$dosen', '$gedung', '$ruangan', '$lantai')");
 	}
 	
 	else if($pin == "5"){
